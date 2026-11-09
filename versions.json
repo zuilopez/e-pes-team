@@ -76,5 +76,11 @@
   "label": "v.11a",
   "date": "2026-11-09",
   "note": "Bảng VAR thu còn 2/3, chữ giữ cỡ dễ đọc, co bớt khoảng thừa"
+ },
+ {
+  "id": "v12",
+  "label": "v.12",
+  "date": "2026-11-09",
+  "note": "Chọn đội 3 lớp cung lồng nhau, logo thật lớn ở rìa trang, ripple 1–60s, vòng giao bóng 1.5x, lịch sử tách vạch"
  }
 ]
