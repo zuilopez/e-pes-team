@@ -88,5 +88,11 @@
   "label": "v.13",
   "date": "09/11/2026",
   "note": "Chọn đội 2 cung căn giữa + symbol/địa cầu, logo thật nhỏ lại, cờ bay cho đội tuyển, VAR ra footer kiểu cyber (Font/FX/Palette/History), header ngang/dọc + tilt, 2 theme mới"
+ },
+ {
+  "id": "v14",
+  "label": "v.14",
+  "date": "09/11/2026",
+  "note": "Logo giải/liên đoàn thật, logo trong 1/2 logo ngoài, cờ floating x2, viền chọn ôm chữ, VAR mở 4 bảng hai bên + ver/lang chạy ra mép T, Previous match cuộn được, ripple thu dần về 30"
  }
 ]
