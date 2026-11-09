@@ -94,5 +94,17 @@
   "label": "v.14",
   "date": "09/11/2026",
   "note": "Logo giải/liên đoàn thật, logo trong 1/2 logo ngoài, cờ floating x2, viền chọn ôm chữ, VAR mở 4 bảng hai bên + ver/lang chạy ra mép T, Previous match cuộn được, ripple thu dần về 30"
+ },
+ {
+  "id": "v15",
+  "label": "v.15",
+  "date": "10/11/2026",
+  "note": "Logo không xoay, logo ngoài glow + dịch vào trong, logo trong shadow nhẹ, mũi tên '<' '>' giữa tên 2 cung, cung bớt cong, Previous matches cuộn + scale, lịch sử demo 5 trận Champions League, VAR chữ rải từ dưới lên + 4 vạch dọc + gradient che, Font 2 cột, EN/VI 1 nút, palette White/Black/Green/Pink"
+ },
+ {
+  "id": "v16",
+  "label": "v.16",
+  "date": "10/11/2026",
+  "note": "Tilt-shift 2 bên logo lớn + hover blur/nghiêng, tam giác tiến/lùi, random lên 1/4 trục, since MMXXVI, VAR/KICK không nghiêng, VAR cột hẹp 15%, Previous matches Lv C2 (thin) + định dạng A ( 1 - 0 ) B, bản mobile (chọn đội bằng sheet)"
  }
 ]
