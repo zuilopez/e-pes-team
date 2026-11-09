@@ -1,1 +1,14 @@
-[{"id":"v01","label":"v.01","date":"09/11/2026","note":"Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số"}]
+[
+ {
+  "id": "v01",
+  "label": "v.01",
+  "date": "09/11/2026",
+  "note": "Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số"
+ },
+ {
+  "id": "v02",
+  "label": "v.02",
+  "date": "09/11/2026",
+  "note": "Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom"
+ }
+]
