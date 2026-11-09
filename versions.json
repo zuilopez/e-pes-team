@@ -46,5 +46,11 @@
   "label": "v.08",
   "date": "2026-11-09",
   "note": "Thêm 17 font Google, nút ngôn ngữ EN/VI (mặc định English)"
+ },
+ {
+  "id": "v09",
+  "label": "v.09",
+  "date": "2026-11-09",
+  "note": "Bố cục H1 / H·A / GOAL / HM / Footer, VAR kính mờ, tuỳ chỉnh font H1, echo từ vòng giữa sân, vạch T 70–90%"
  }
 ]
