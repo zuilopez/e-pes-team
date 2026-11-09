@@ -40,5 +40,11 @@
   "label": "v.07",
   "date": "2026-11-09",
   "note": "Footer palette/version, bigger title, clock phase, echo anim, VAR tabs, history glow"
+ },
+ {
+  "id": "v08",
+  "label": "v.08",
+  "date": "2026-11-09",
+  "note": "Thêm 17 font Google, nút ngôn ngữ EN/VI (mặc định English)"
  }
 ]
