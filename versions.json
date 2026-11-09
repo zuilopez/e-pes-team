@@ -52,5 +52,11 @@
   "label": "v.09",
   "date": "2026-11-09",
   "note": "Bố cục H1 / H·A / GOAL / HM / Footer, VAR kính mờ, tuỳ chỉnh font H1, echo từ vòng giữa sân, vạch T 70–90%"
+ },
+ {
+  "id": "v10",
+  "label": "v.10",
+  "date": "2026-11-09",
+  "note": "VAR về footer nhỏ lại, bỏ glow, đồng hồ to sát vòng echo, echo nhảy từng vòng + spacing, version/palette vào VAR, logo fake trong ô chọn đội"
  }
 ]
