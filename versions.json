@@ -58,5 +58,11 @@
   "label": "v.10",
   "date": "2026-11-09",
   "note": "VAR về footer nhỏ lại, bỏ glow, đồng hồ to sát vòng echo, echo nhảy từng vòng + spacing, version/palette vào VAR, logo fake trong ô chọn đội"
+ },
+ {
+  "id": "v10a",
+  "label": "v.10a",
+  "date": "2026-11-09",
+  "note": "3 cấp chữ: A pagename/tên thật · B slogan/tên fake/kick-off/VAR · C home-away/random/back/giờ"
  }
 ]
