@@ -106,5 +106,11 @@
   "label": "v.16",
   "date": "10/11/2026",
   "note": "Tilt-shift 2 bên logo lớn + hover blur/nghiêng, tam giác tiến/lùi, random lên 1/4 trục, since MMXXVI, VAR/KICK không nghiêng, VAR cột hẹp 15%, Previous matches Lv C2 (thin) + định dạng A ( 1 - 0 ) B, bản mobile (chọn đội bằng sheet)"
+ },
+ {
+  "id": "v17",
+  "label": "v.17",
+  "date": "10/11/2026",
+  "note": "Since + giờ hoàn thiện trang (justify toàn chiều rộng, nhỏ 25%), sửa ripple (vòng lặp chết ở khung đầu), cỡ chữ VAR theo Palette, bảng rộng thêm 3% mỗi bên, Previous không còn ngoặc + xuống dòng, bỏ gạch sọc Font, thanh trượt chia 5 khúc"
  }
 ]
