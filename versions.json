@@ -24,63 +24,9 @@
   "note": "Vạch chữ T, logo trái/khẩu hiệu phải, roll 5 đội chữ x2, đồng hồ 10 phút, echo toàn trang"
  },
  {
-  "id": "v16",
-  "label": "v.16",
+  "id": "v100",
+  "label": "v.1.0",
   "date": "10/11/2026",
-  "note": "Tilt-shift 2 bên logo lớn + hover blur/nghiêng, tam giác tiến/lùi, random lên 1/4 trục, since MMXXVI, VAR/KICK không nghiêng, VAR cột hẹp 15%, Previous matches Lv C2 (thin) + định dạng A ( 1 - 0 ) B, bản mobile (chọn đội bằng sheet)"
- },
- {
-  "id": "v17",
-  "label": "v.17",
-  "date": "10/11/2026",
-  "note": "Since + giờ hoàn thiện trang (justify toàn chiều rộng, nhỏ 25%), sửa ripple (vòng lặp chết ở khung đầu), cỡ chữ VAR theo Palette, bảng rộng thêm 3% mỗi bên, Previous không còn ngoặc + xuống dòng, bỏ gạch sọc Font, thanh trượt chia 5 khúc"
- },
- {
-  "id": "v18",
-  "label": "v.18",
-  "date": "10/11/2026",
-  "note": "Since NOV 10 MMXXVI 09:05 (word-justify trong khung T, -15%), thanh trượt 2 khúc + snap + dạng fill mỏng, mũi tên cố định chỉ đổi hướng, option tên dài 2 dòng, logo ngoài dịch vào + perspective 5°, Font bỏ tilt + danh sách 2 cột Grotesk/Script, chữ VAR +15%"
- },
- {
-  "id": "v18a",
-  "label": "v.18a",
-  "date": "10/11/2026",
-  "note": "Since: font Lv A weight 400, -15%, giãn hết chiều rộng trang"
- },
- {
-  "id": "v19",
-  "label": "v.19",
-  "date": "10/11/2026",
-  "note": "Random xuống 2/3 trục (mobile), Previous: trận cũ mờ nửa trận trước + vạch 1px cách đều + leading rộng hơn, Lv D (random/back/tab/VAR/history) tách khỏi Lv C (since + Home/Away)"
- },
- {
-  "id": "v19a",
-  "label": "v.19a",
-  "date": "10/11/2026",
-  "note": "Previous matches ẩn mặc định (bấm tiêu đề để trồi lên), logo ngoài = 2.25x logo trong + blur mạnh hơn, đồng hồ đếm theo Lv C"
- },
- {
-  "id": "v19b",
-  "label": "v.19b",
-  "date": "10/11/2026",
-  "note": "Font: A=pagename+tên thật+tên thật PM; B giữ nguyên + nút back/tab theo B; C=H/A, ô tỉ số, countdown, tiêu đề cột VAR; D=random, ngày giờ, tiêu đề PM, tiêu đề mục con; PM trong bảng justify; xóa phiên bản đã bỏ khỏi lịch sử"
- },
- {
-  "id": "v19c",
-  "label": "v.19c",
-  "date": "10/11/2026",
-  "note": "Since dùng màu phụ + lớn thêm 25%, bảng màu sửa được cả 4 màu (trắng/đen/theme/phụ), lịch sử version chỉ còn các bản có trong archive"
- },
- {
-  "id": "v19d",
-  "label": "v.19d",
-  "date": "10/11/2026",
-  "note": "Random xuống 0.34 đường kính phía trên vòng giữa (mọi cỡ màn), tên 2 dòng giữ cỡ chữ như 1 dòng"
- },
- {
-  "id": "v19e",
-  "label": "v.19e",
-  "date": "10/11/2026",
-  "note": "Xóa từng trận trong Score history (nút ×), nút Copy settings để lấy cấu hình giao diện làm mặc định, BAKED defaults"
+  "note": "Bản chính thức đầu tiên"
  }
 ]
