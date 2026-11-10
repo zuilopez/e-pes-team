@@ -58,5 +58,11 @@
   "label": "v.1.2c",
   "date": "10/11/2026",
   "note": "Bỏ nút full time"
+ },
+ {
+  "id": "v1.2d",
+  "label": "v.1.2d",
+  "date": "10/11/2026",
+  "note": "Pick team thu nhỏ sau khi chọn; sửa mobile: chữ lớn, khung ôm tên, tên phụ, header lớn hơn"
  }
 ]
