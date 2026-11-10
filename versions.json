@@ -64,5 +64,11 @@
   "label": "v.19b",
   "date": "10/11/2026",
   "note": "Font: A=pagename+tên thật+tên thật PM; B giữ nguyên + nút back/tab theo B; C=H/A, ô tỉ số, countdown, tiêu đề cột VAR; D=random, ngày giờ, tiêu đề PM, tiêu đề mục con; PM trong bảng justify; xóa phiên bản đã bỏ khỏi lịch sử"
+ },
+ {
+  "id": "v19c",
+  "label": "v.19c",
+  "date": "10/11/2026",
+  "note": "Since dùng màu phụ + lớn thêm 25%, bảng màu sửa được cả 4 màu (trắng/đen/theme/phụ), lịch sử version chỉ còn các bản có trong archive"
  }
 ]
