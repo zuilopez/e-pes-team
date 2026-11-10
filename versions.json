@@ -118,5 +118,11 @@
   "label": "v.18",
   "date": "10/11/2026",
   "note": "Since NOV 10 MMXXVI 09:05 (word-justify trong khung T, -15%), thanh trượt 2 khúc + snap + dạng fill mỏng, mũi tên cố định chỉ đổi hướng, option tên dài 2 dòng, logo ngoài dịch vào + perspective 5°, Font bỏ tilt + danh sách 2 cột Grotesk/Script, chữ VAR +15%"
+ },
+ {
+  "id": "v18a",
+  "label": "v.18a",
+  "date": "10/11/2026",
+  "note": "Since: font Lv A weight 400, -15%, giãn hết chiều rộng trang"
  }
 ]
