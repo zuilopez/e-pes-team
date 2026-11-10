@@ -112,5 +112,11 @@
   "label": "v.17",
   "date": "10/11/2026",
   "note": "Since + giờ hoàn thiện trang (justify toàn chiều rộng, nhỏ 25%), sửa ripple (vòng lặp chết ở khung đầu), cỡ chữ VAR theo Palette, bảng rộng thêm 3% mỗi bên, Previous không còn ngoặc + xuống dòng, bỏ gạch sọc Font, thanh trượt chia 5 khúc"
+ },
+ {
+  "id": "v18",
+  "label": "v.18",
+  "date": "10/11/2026",
+  "note": "Since NOV 10 MMXXVI 09:05 (word-justify trong khung T, -15%), thanh trượt 2 khúc + snap + dạng fill mỏng, mũi tên cố định chỉ đổi hướng, option tên dài 2 dòng, logo ngoài dịch vào + perspective 5°, Font bỏ tilt + danh sách 2 cột Grotesk/Script, chữ VAR +15%"
  }
 ]
