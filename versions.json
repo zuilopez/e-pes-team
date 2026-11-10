@@ -124,5 +124,11 @@
   "label": "v.18a",
   "date": "10/11/2026",
   "note": "Since: font Lv A weight 400, -15%, giãn hết chiều rộng trang"
+ },
+ {
+  "id": "v19",
+  "label": "v.19",
+  "date": "10/11/2026",
+  "note": "Random xuống 2/3 trục, Previous: trận cũ mờ nửa trận trước + vạch 1px cách đều + leading rộng hơn, Lv D (random/back/tab/VAR/history) tách khỏi Lv C (since + Home/Away)"
  }
 ]
