@@ -130,5 +130,11 @@
   "label": "v.19",
   "date": "10/11/2026",
   "note": "Random xuống 2/3 trục (mobile), Previous: trận cũ mờ nửa trận trước + vạch 1px cách đều + leading rộng hơn, Lv D (random/back/tab/VAR/history) tách khỏi Lv C (since + Home/Away)"
+ },
+ {
+  "id": "v19a",
+  "label": "v.19a",
+  "date": "10/11/2026",
+  "note": "Previous matches ẩn mặc định (bấm tiêu đề để trồi lên), logo ngoài = 2.25x logo trong + blur mạnh hơn, đồng hồ đếm theo Lv C"
  }
 ]
