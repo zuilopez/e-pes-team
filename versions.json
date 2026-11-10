@@ -46,5 +46,11 @@
   "label": "v.1.2a",
   "date": "10/11/2026",
   "note": "Nút pick teams (Lv B) thay RANDOM, tâm lật up/down: pick teams - KICK-OFF - đồng hồ + space to play, nét giữa sân co lại, mặc định = cài đặt hiện tại của bạn, app cài được"
+ },
+ {
+  "id": "v1.2b",
+  "label": "v.1.2b",
+  "date": "10/11/2026",
+  "note": "Mobile: 2 hàng thẳng mỗi bên, trượt ngang, hiện tối đa 3 đội, hàng gần tâm lớn hơn"
  }
 ]
