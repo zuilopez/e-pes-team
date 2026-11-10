@@ -12,18 +12,6 @@
   "note": "Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom"
  },
  {
-  "id": "v03",
-  "label": "v.03",
-  "date": "09/11/2026",
-  "note": "3 palette, bánh xe dạng đồng hồ, chữ x2, lịch sử 3 trận, đổi màu pagename/khẩu hiệu"
- },
- {
-  "id": "v04",
-  "label": "v.04",
-  "date": "09/11/2026",
-  "note": "Sân tối giản (35%), bánh xe 5 đội/cung 30°, tên giả nhỏ nằm dưới, lịch sử timeline, nút VAR"
- },
- {
   "id": "v05",
   "label": "v.05",
   "date": "09/11/2026",
@@ -34,72 +22,6 @@
   "label": "v.06",
   "date": "09/11/2026",
   "note": "Vạch chữ T, logo trái/khẩu hiệu phải, roll 5 đội chữ x2, đồng hồ 10 phút, echo toàn trang"
- },
- {
-  "id": "v07",
-  "label": "v.07",
-  "date": "2026-11-09",
-  "note": "Footer palette/version, bigger title, clock phase, echo anim, VAR tabs, history glow"
- },
- {
-  "id": "v08",
-  "label": "v.08",
-  "date": "2026-11-09",
-  "note": "Thêm 17 font Google, nút ngôn ngữ EN/VI (mặc định English)"
- },
- {
-  "id": "v09",
-  "label": "v.09",
-  "date": "2026-11-09",
-  "note": "Bố cục H1 / H·A / GOAL / HM / Footer, VAR kính mờ, tuỳ chỉnh font H1, echo từ vòng giữa sân, vạch T 70–90%"
- },
- {
-  "id": "v10",
-  "label": "v.10",
-  "date": "2026-11-09",
-  "note": "VAR về footer nhỏ lại, bỏ glow, đồng hồ to sát vòng echo, echo nhảy từng vòng + spacing, version/palette vào VAR, logo fake trong ô chọn đội"
- },
- {
-  "id": "v10a",
-  "label": "v.10a",
-  "date": "2026-11-09",
-  "note": "3 cấp chữ: A pagename/tên thật · B slogan/tên fake/kick-off/VAR · C home-away/random/back/giờ"
- },
- {
-  "id": "v11",
-  "label": "v.11",
-  "date": "2026-11-09",
-  "note": "Roll chọn đội cong theo vòng echo + blur, logo thật to có glow, picker font A-Z có preview, VAR 1/3, vạch giữa mờ vào lịch sử"
- },
- {
-  "id": "v11a",
-  "label": "v.11a",
-  "date": "2026-11-09",
-  "note": "Bảng VAR thu còn 2/3, chữ giữ cỡ dễ đọc, co bớt khoảng thừa"
- },
- {
-  "id": "v12",
-  "label": "v.12",
-  "date": "2026-11-09",
-  "note": "Chọn đội 3 lớp cung lồng nhau, logo thật lớn ở rìa trang, ripple 1–60s, vòng giao bóng 1.5x, lịch sử tách vạch"
- },
- {
-  "id": "v13",
-  "label": "v.13",
-  "date": "09/11/2026",
-  "note": "Chọn đội 2 cung căn giữa + symbol/địa cầu, logo thật nhỏ lại, cờ bay cho đội tuyển, VAR ra footer kiểu cyber (Font/FX/Palette/History), header ngang/dọc + tilt, 2 theme mới"
- },
- {
-  "id": "v14",
-  "label": "v.14",
-  "date": "09/11/2026",
-  "note": "Logo giải/liên đoàn thật, logo trong 1/2 logo ngoài, cờ floating x2, viền chọn ôm chữ, VAR mở 4 bảng hai bên + ver/lang chạy ra mép T, Previous match cuộn được, ripple thu dần về 30"
- },
- {
-  "id": "v15",
-  "label": "v.15",
-  "date": "10/11/2026",
-  "note": "Logo không xoay, logo ngoài glow + dịch vào trong, logo trong shadow nhẹ, mũi tên '<' '>' giữa tên 2 cung, cung bớt cong, Previous matches cuộn + scale, lịch sử demo 5 trận Champions League, VAR chữ rải từ dưới lên + 4 vạch dọc + gradient che, Font 2 cột, EN/VI 1 nút, palette White/Black/Green/Pink"
  },
  {
   "id": "v16",
@@ -136,5 +58,11 @@
   "label": "v.19a",
   "date": "10/11/2026",
   "note": "Previous matches ẩn mặc định (bấm tiêu đề để trồi lên), logo ngoài = 2.25x logo trong + blur mạnh hơn, đồng hồ đếm theo Lv C"
+ },
+ {
+  "id": "v19b",
+  "label": "v.19b",
+  "date": "10/11/2026",
+  "note": "Font: A=pagename+tên thật+tên thật PM; B giữ nguyên + nút back/tab theo B; C=H/A, ô tỉ số, countdown, tiêu đề cột VAR; D=random, ngày giờ, tiêu đề PM, tiêu đề mục con; PM trong bảng justify; xóa phiên bản đã bỏ khỏi lịch sử"
  }
 ]
