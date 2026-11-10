@@ -34,5 +34,11 @@
   "label": "v.1.1",
   "date": "10/11/2026",
   "note": "Random + gợi ý chọn đội vào trong vòng tròn tâm, 4 màu nền chọn nhanh phía trên Previous matches, tiêu đề PM bold"
+ },
+ {
+  "id": "v1.2",
+  "label": "v.1.2",
+  "date": "10/11/2026",
+  "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  }
 ]
