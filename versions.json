@@ -28,5 +28,11 @@
   "label": "v.1.0",
   "date": "10/11/2026",
   "note": "Bản chính thức đầu tiên"
+ },
+ {
+  "id": "v1.1",
+  "label": "v.1.1",
+  "date": "10/11/2026",
+  "note": "Random + gợi ý chọn đội vào trong vòng tròn tâm, 4 màu nền chọn nhanh phía trên Previous matches, tiêu đề PM bold"
  }
 ]
