@@ -70,5 +70,11 @@
   "label": "v.19c",
   "date": "10/11/2026",
   "note": "Since dùng màu phụ + lớn thêm 25%, bảng màu sửa được cả 4 màu (trắng/đen/theme/phụ), lịch sử version chỉ còn các bản có trong archive"
+ },
+ {
+  "id": "v19d",
+  "label": "v.19d",
+  "date": "10/11/2026",
+  "note": "Random xuống 0.34 đường kính phía trên vòng giữa (mọi cỡ màn), tên 2 dòng giữ cỡ chữ như 1 dòng"
  }
 ]
