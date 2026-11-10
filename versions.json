@@ -52,5 +52,11 @@
   "label": "v.1.2b",
   "date": "10/11/2026",
   "note": "Mobile: 2 hàng thẳng mỗi bên, trượt ngang, hiện tối đa 3 đội, hàng gần tâm lớn hơn"
+ },
+ {
+  "id": "v1.2c",
+  "label": "v.1.2c",
+  "date": "10/11/2026",
+  "note": "Bỏ nút full time"
  }
 ]
