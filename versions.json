@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2i",
-  "label": "v.1.2i",
+  "id": "v1.2j",
+  "label": "v.1.2j",
   "date": "11/11/2026",
-  "note": "PM: tỉ số justify sát mép 2 cột trong VAR; vào trận chỉ giữ tên 2 đội (còn lại 10%); logo trong zoom blur viền thay glow; mica logo ngoài mạnh hơn"
+  "note": "Đổi FX logo trong/ngoài (ngoài zoom blur 1,5×, trong glow); 9:16 giãn tên đội 1,5× và HOME/AWAY; đồng hồ: pause mờ hơn, bỏ stroke icon, hint xa tâm; pick teams hạ xuống 1/4; vào trận hiện rõ echo; PM: save từng trận, clear giữ trận đã save, bỏ gạch ngang, tên justify/2 dòng"
  }
 ]
