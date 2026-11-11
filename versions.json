@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2z",
-  "label": "v.1.2z",
+  "id": "v1.3a",
+  "label": "v.1.3a",
   "date": "11/11/2026",
-  "note": "Cung chọn: mỗi bước xa tên đang chọn nhỏ đi 35%; slogan footer: khoảng cách chữ còn 1/2, bằng khoảng cách tới VAR"
+  "note": "Sau trận: màn sáng lại/echo giãn ra nhưng các đội mờ chỉ sáng khi pick team mới; PM hiện từ dưới lên trong 0.25s"
  }
 ]
