@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2q",
-  "label": "v.1.2q",
+  "id": "v1.2r",
+  "label": "v.1.2r",
   "date": "11/11/2026",
-  "note": "Vào trận: nền footer nâng lên đúng bằng phần header lùi (ôm trọn PM + chấm màu), since/page name giãn đều trong header đã thu"
+  "note": "Vào trận: nền header lùi lên (vignette/tilt mở rộng lên vùng header) cùng nhịp với nền footer nâng; slogan footer chỉ trải tới bề rộng 2 cung trong"
  }
 ]
