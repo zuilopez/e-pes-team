@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2v",
-  "label": "v.1.2v",
+  "id": "v1.2w",
+  "label": "v.1.2w",
   "date": "11/11/2026",
-  "note": "Echo phủ toàn trang, lan ra trên/dưới khi vào trận; End match đảo ngược mọi hiệu ứng vào trận; VAR mở/đóng ~0.5s"
+  "note": "Bỏ tilt-shift; vào trận làm mờ cung chọn (35%); ô tỉ số chỉ hiện khi END MATCH; dọc: logo nhỏ 15%, giãn 10%, vạch giữa đứt quanh logo/H-A; ngang co khoảng cách 1/3; VAR hiện ~1s từ dưới lên/trong ra ngoài; đổi chỗ PM và bảng màu"
  }
 ]
