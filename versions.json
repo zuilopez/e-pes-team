@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2k",
-  "label": "v.1.2k",
+  "id": "v1.2l",
+  "label": "v.1.2l",
   "date": "11/11/2026",
-  "note": "FX zoom/spin blur chỉnh được cho logo ngoài; PM: bảng 3 cột căn giữa, dòng sát hơn, ngày xa tỉ số; VAR trả về căn giữa, lịch sử 3 phần tối đa 7 trận; Font: bảng cao ×1,5, preview ×2, weight đúng theo từng font"
+  "note": "Zoom blur ×3 (bỏ spin) + thanh Mica; lịch sử chữ lớn, bấm tỉ số để sửa; KO: pick team/space to play/end match cân ở 1/8 đường kính; ô tỉ số chữ nhật bo mỏng chỉ hiện khi End match; web ngang chia đều khoảng cách; PM lịch sử chạy lên trên, thanh giữa sân không còn mờ khi đóng; Bảng màu: thanh làm tối nền trắng"
  }
 ]
