@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2l",
-  "label": "v.1.2l",
+  "id": "v1.2m",
+  "label": "v.1.2m",
   "date": "11/11/2026",
-  "note": "Zoom blur ×3 (bỏ spin) + thanh Mica; lịch sử chữ lớn, bấm tỉ số để sửa; KO: pick team/space to play/end match cân ở 1/8 đường kính; ô tỉ số chữ nhật bo mỏng chỉ hiện khi End match; web ngang chia đều khoảng cách; PM lịch sử chạy lên trên, thanh giữa sân không còn mờ khi đóng; Bảng màu: thanh làm tối nền trắng"
+  "note": "Zoom blur: bỏ Mica, thêm Điểm tụ + Độ mờ; vào trận: đội không chọn sáng hơn + tilt-shift (giữa sân & 2 tên nét); PM/VAR hiệu ứng sổ ra 2 bên; chỉ số VAR nhỏ hơn, sát thanh; đồng hồ tự co vừa vòng tròn; ô tỉ số chữ nhật dọc; dọc: cung 7 hàng, khoảng cách −35%, H/A xa 5%, header dàn đều"
  }
 ]
