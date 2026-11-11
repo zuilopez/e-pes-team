@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2d",
-  "label": "v.1.2d",
-  "date": "10/11/2026",
-  "note": "Pick team thu nhỏ sau khi chọn; sửa mobile: chữ lớn, khung ôm tên, tên phụ, header lớn hơn"
+  "id": "v1.2e",
+  "label": "v.1.2e",
+  "date": "11/11/2026",
+  "note": "End/new match, play-pause icon, độ nén ripple, zoom blur, 9:16, since by zuilopez"
  }
 ]
