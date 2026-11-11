@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.3a",
-  "label": "v.1.3a",
+  "id": "v1.3b",
+  "label": "v.1.3b",
   "date": "11/11/2026",
-  "note": "Sau trận: màn sáng lại/echo giãn ra nhưng các đội mờ chỉ sáng khi pick team mới; PM hiện từ dưới lên trong 0.25s"
+  "note": "Hết trận: khoảng cách vòng echo mở rộng dần từ giá trị đã thu lên lại mức cài đặt (5s)"
  }
 ]
