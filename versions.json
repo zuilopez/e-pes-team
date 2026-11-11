@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2y",
-  "label": "v.1.2y",
+  "id": "v1.2z",
+  "label": "v.1.2z",
   "date": "11/11/2026",
-  "note": "Vào trận: t1 scale từ trên, vạch ngang 5s rồi vạch giữa thu về tâm, slogan footer hiện sau 5s (End match đảo ngược); bỏ darken white; space to play đen; cung chọn cân dọc ban đầu, cung trượt 0.25s ease-out, mũi tên cách đều; progress bar gap 1/2; ô tỉ số tròn ×1.5"
+  "note": "Cung chọn: mỗi bước xa tên đang chọn nhỏ đi 35%; slogan footer: khoảng cách chữ còn 1/2, bằng khoảng cách tới VAR"
  }
 ]
