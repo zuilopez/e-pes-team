@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2t",
-  "label": "v.1.2t",
+  "id": "v1.2u",
+  "label": "v.1.2u",
   "date": "11/11/2026",
-  "note": "Bỏ hẳn nền header/footer khi vào trận (không còn nền nâng/lùi)"
+  "note": "Vignette phủ toàn trang (không còn khung tối chỉ trong vùng sân, hết viền header/footer)"
  }
 ]
