@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2s",
-  "label": "v.1.2s",
+  "id": "v1.2t",
+  "label": "v.1.2t",
   "date": "11/11/2026",
-  "note": "Cung dọc hiện đủ 7 hàng (lỗi: geo cột thiếu cờ port); đổi face KO/PICK/clock bằng zoom-blur thay vì lật; animation vào trận kéo dài 3s"
+  "note": "Bỏ hẳn nền header/footer khi vào trận (không còn nền nâng/lùi)"
  }
 ]
