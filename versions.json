@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.3b",
-  "label": "v.1.3b",
+  "id": "v1.3c",
+  "label": "v.1.3c",
   "date": "11/11/2026",
-  "note": "Hết trận: khoảng cách vòng echo mở rộng dần từ giá trị đã thu lên lại mức cài đặt (5s)"
+  "note": "Bảng màu mặc định: nền đen (chữ tên trắng)"
  }
 ]
