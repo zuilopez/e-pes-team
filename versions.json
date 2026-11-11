@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2u",
-  "label": "v.1.2u",
+  "id": "v1.2v",
+  "label": "v.1.2v",
   "date": "11/11/2026",
-  "note": "Vignette phủ toàn trang (không còn khung tối chỉ trong vùng sân, hết viền header/footer)"
+  "note": "Echo phủ toàn trang, lan ra trên/dưới khi vào trận; End match đảo ngược mọi hiệu ứng vào trận; VAR mở/đóng ~0.5s"
  }
 ]
