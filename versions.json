@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2g",
-  "label": "v.1.2g",
+  "id": "v1.2h",
+  "label": "v.1.2h",
   "date": "11/11/2026",
-  "note": "Bỏ độ nén & zoom blur, end match luôn hoạt động (bỏ trống = 0), since justify từng từ, 9:16: cung nhỏ 10% + giãn ra, logo lớn +25% mica, logo trong glow theme ở nền đen"
+  "note": "PM: có trận do bạn nhập thì tự ẩn dữ liệu mẫu; trận của bạn lưu trong localStorage (không bị update ghi đè)"
  }
 ]
