@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2h",
-  "label": "v.1.2h",
+  "id": "v1.2i",
+  "label": "v.1.2i",
   "date": "11/11/2026",
-  "note": "PM: có trận do bạn nhập thì tự ẩn dữ liệu mẫu; trận của bạn lưu trong localStorage (không bị update ghi đè)"
+  "note": "PM: tỉ số justify sát mép 2 cột trong VAR; vào trận chỉ giữ tên 2 đội (còn lại 10%); logo trong zoom blur viền thay glow; mica logo ngoài mạnh hơn"
  }
 ]
