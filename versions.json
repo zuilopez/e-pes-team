@@ -42,9 +42,9 @@
   "note": "Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang"
  },
  {
-  "id": "v1.2n",
-  "label": "v.1.2n",
+  "id": "v1.2o",
+  "label": "v.1.2o",
   "date": "11/11/2026",
-  "note": "Header dọc trả về như ngang (bỏ dịch); vào trận có vignette, echo luôn ở lớp dưới cùng; End/New match + pick team dùng font Lv D; Ring spacing 30–300; PM + bảng màu kéo xuống cách đều VAR; hàng chọn màu căn đều 2 cột; mobile VAR chỉ còn Header layout + T-line height"
+  "note": "Cung dọc 7 đội (ngang giữ 5); H/A không bị tilt-shift; vào trận: header co lên/footer cao lên, slogan tan từ ngoài vào rồi hiện ở footer 2 bên lan ra bằng độ rộng cung ngoài, vạch ngang chữ T co từ ngoài vào (2–3s); since khác màu slogan ở nền Green/Pink"
  }
 ]
