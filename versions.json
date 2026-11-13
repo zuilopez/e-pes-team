@@ -88,5 +88,11 @@
   "label": "v.1.3j",
   "date": "13/11/2026",
   "note": "Số đội căn giữa dưới tên giải (nhỏ 2/3); xoay cung chọn đội tự hiện logo ở 2 vị trí (click chỉ để chọn); zoom blur logo chạy 35 → 100 khi vào trận và ngược lại"
+ },
+ {
+  "id": "v1.3k",
+  "label": "v.1.3k",
+  "date": "13/11/2026",
+  "note": "Sửa triệt để vạch mờ ở footer khi vào trận: vòng echo bị cắt đúng theo đáy sân (trước đây vùng cắt mở thêm 82px xuống footer)"
  }
 ]

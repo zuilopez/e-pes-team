@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3j</title>
+<title>e-pes-team v.1.3k</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -69,7 +69,7 @@ main::before{content:'';position:absolute;left:2.5vw;right:2.5vw;top:0;height:1.
 .stage{position:absolute;inset:0}
 .pitch{position:absolute;left:50%;top:0;bottom:0;transform:translateX(-50%);width:600px;container-type:inline-size;z-index:3}
 #echoW{position:absolute;inset:0;pointer-events:none;overflow:visible;clip-path:inset(0);transition:clip-path 5s cubic-bezier(.65,0,.25,1)}
-body[data-ph=match] #echoW{clip-path:inset(calc(var(--hh,100px)*-1) 0 -82px 0)}
+body[data-ph=match] #echoW{clip-path:inset(calc(var(--hh,100px)*-1) 0 0 0)}
 #echoSvg,#echoLit{position:absolute;inset:0;width:100%;height:100%;fill:none;overflow:visible}
 #echoSvg{stroke:var(--ink);stroke-width:1.5}
 #echoLit circle{stroke-width:3;fill:none}
@@ -416,7 +416,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3j</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3k</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -428,7 +428,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3j';
+const CUR = 'v1.3k';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -444,7 +444,8 @@ const VERSIONS = [
  {id:'v1.3g',label:'v.1.3g',date:'13/11/2026',note:'QG hiện quốc kỳ (bỏ logo liên đoàn), bỏ logo trên sao; giao diện xanh: since trắng; giao diện hồng: slogan xanh'},
  {id:'v1.3h',label:'v.1.3h',date:'13/11/2026',note:'Ngưỡng ≥ 3 sao; thêm 22 CLB (Süper Lig, Eredivisie, Bồ Đào Nha, Brasil, Argentina, AFC...) và 12 QG; hiện số đội dưới tên giải/khu vực; icon giải CLB x2'},
  {id:'v1.3i',label:'v.1.3i',date:'13/11/2026',note:'Số đội thu nhỏ ở góc trên phải tên (thêm cho Club/Nation), icon Club/Nation x2, trắng xuống cuối bảng màu, since 4/5, PM luôn hiện 3 trận, làm mờ khi vào trận x2'},
- {id:'v1.3j',label:'v.1.3j',date:'13/11/2026',note:'Số đội căn giữa dưới tên giải (nhỏ 2/3); xoay cung chọn đội tự hiện logo ở 2 vị trí (click chỉ để chọn); zoom blur logo chạy 35 → 100 khi vào trận và ngược lại'}
+ {id:'v1.3j',label:'v.1.3j',date:'13/11/2026',note:'Số đội căn giữa dưới tên giải (nhỏ 2/3); xoay cung chọn đội tự hiện logo ở 2 vị trí (click chỉ để chọn); zoom blur logo chạy 35 → 100 khi vào trận và ngược lại'},
+ {id:'v1.3k',label:'v.1.3k',date:'13/11/2026',note:'Sửa triệt để vạch mờ ở footer khi vào trận: vòng echo bị cắt đúng theo đáy sân (trước đây vùng cắt mở thêm 82px xuống footer)'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
