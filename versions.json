@@ -130,5 +130,11 @@
   "label": "v.1.3q",
   "date": "13/11/2026",
   "note": "Thêm chọn hiệu ứng ở tab FX: 1 gợn sóng (như cũ), 2 nhịp tim (echo dồn vào tâm rồi giãn, chu kỳ chỉnh bằng thanh kéo), 3 sóng chấm (cung đứt ra co về 4 hướng, vòng chấm bi sáng dần lan từ tâm)"
+ },
+ {
+  "id": "v1.3r",
+  "label": "v.1.3r",
+  "date": "13/11/2026",
+  "note": "Layout dọc: vào trận các vòng sân xoay 90° từ vòng giữa lan ra ngoài; layout + nền sân dịch để vòng tròn giữa sân nằm đúng tâm màn hình (header/footer co giãn theo)"
  }
 ]

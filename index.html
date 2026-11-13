@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3q</title>
+<title>e-pes-team v.1.3r</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -22,7 +22,8 @@
 :root{--vz:.84;--fC:'Inter','Helvetica Neue',Arial,sans-serif;--wC:500;--sC:1;--lsC:.02em;--kC:0;--fD:'Inter','Helvetica Neue',Arial,sans-serif;--wD:500;--sD:1;--lsD:.02em;--kD:0;--g:'Familjen Grotesk','Helvetica Neue',Arial,sans-serif;--fN:'Inter','Helvetica Neue',Arial,sans-serif;--hw:'Nothing You Could Do',cursive;--wN:900;--wS:400;--bg:#fff;--ink:#0a0a0a;--theme:#d6f04a;--sec:#ff5fae;--nameC:#0a0a0a;--subC:#d6f04a;--onTheme:#0a0a0a;--onSec:#0a0a0a;--tl:12px;--bm:12px;--bs:140px;--ls:70px;--lc:180px;--bx:80px;--hh:126px;--M:700px;--cy:330px;--rowH:76px}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
-body{background:var(--bg);color:var(--ink);font-family:var(--g);overflow:hidden;display:grid;grid-template-rows:var(--hh) minmax(0,1fr) 82px;height:100dvh;transition:background .25s,color .25s}
+body{background:var(--bg);color:var(--ink);font-family:var(--g);overflow:hidden;display:grid;grid-template-rows:var(--hh) minmax(0,1fr) 82px;height:100dvh;transition:background .25s,color .25s,grid-template-rows 5s cubic-bezier(.65,0,.25,1)}
+body[data-port="1"][data-ph=match]{grid-template-rows:calc(var(--hh) + var(--shy,0px)) minmax(0,1fr) calc(82px - var(--shy,0px))}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* H1 */
 header{position:relative;display:flex;justify-content:center;align-items:flex-end;padding:0 2.5vw var(--tl);overflow:visible;min-height:0}
@@ -424,7 +425,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3q</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3r</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -436,7 +437,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3q';
+const CUR = 'v1.3r';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -459,7 +460,8 @@ const VERSIONS = [
  {id:'v1.3n',label:'v.1.3n',date:'13/11/2026',note:'Vạch ngang dưới đối xứng vạch trên qua tâm vòng tròn giữa sân (chữ PM hiện thì đè lên vạch)'},
  {id:'v1.3o',label:'v.1.3o',date:'13/11/2026',note:'Vạch giữa sân đối xứng tâm (từ vạch trên tới vạch dưới), 2 vạch ngang + vạch giữa rút vào bằng nhau; vạch dưới/vạch giữa đứt 1 khoảng khi gặp PM (PM là 1 khối), ngoài ra liền nét'},
  {id:'v1.3p',label:'v.1.3p',date:'13/11/2026',note:'Tên đội giảm 20%, cung logo trong dịch ra 10%; vạch echo đứt một khoảng khi gặp chữ/logo/PM (khoảng đứt = vật + 1/4 chiều rộng mỗi bên)'},
- {id:'v1.3q',label:'v.1.3q',date:'13/11/2026',note:'Thêm chọn hiệu ứng ở tab FX: 1 gợn sóng (như cũ), 2 nhịp tim (echo dồn vào tâm rồi giãn, chu kỳ chỉnh bằng thanh kéo), 3 sóng chấm (cung đứt ra co về 4 hướng, vòng chấm bi sáng dần lan từ tâm)'}
+ {id:'v1.3q',label:'v.1.3q',date:'13/11/2026',note:'Thêm chọn hiệu ứng ở tab FX: 1 gợn sóng (như cũ), 2 nhịp tim (echo dồn vào tâm rồi giãn, chu kỳ chỉnh bằng thanh kéo), 3 sóng chấm (cung đứt ra co về 4 hướng, vòng chấm bi sáng dần lan từ tâm)'},
+ {id:'v1.3r',label:'v.1.3r',date:'13/11/2026',note:'Layout dọc: vào trận các vòng sân xoay 90° từ vòng giữa lan ra ngoài; layout + nền sân dịch để vòng tròn giữa sân nằm đúng tâm màn hình (header/footer co giãn theo)'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
@@ -809,7 +811,7 @@ class Side {
 const SD = {L: new Side('L'), R: new Side('R')};
 const team = {L: null, R: null};
 let ECHO = {w:0, h:0, cx:0, cy:0, r0:0, rmax:0};
-const HB = {k:1, t0:0, raf:0}, F3 = {p:0, to:0, raf:0, last:0};
+const ROT = {on:false, t0:0, raf:0, a:[]}, HB = {k:1, t0:0, raf:0}, F3 = {p:0, to:0, raf:0, last:0};
 
 function layout(){
   const M = $('main').clientHeight, vw = innerWidth, mob = MOB(), rowH = mob ? 44 : 56, histMax = .25 * M + 26;
@@ -830,7 +832,7 @@ function layout(){
   if (!port && !mob){ const free = vw / 2 - outer; bs = Math.min(bs, Math.max(60, free - 2 * g)); bx = Math.max(bs / 2, free - gs * 1.5 - bs / 2); bx *= 1.15 }      // landscape: outer crest centred in the free space, equal gaps
   if (mob){ g = 8; bs = 0 }
   const r = document.documentElement.style;
-  r.setProperty('--M', M + 'px'); r.setProperty('--cy', cy + 'px'); r.setProperty('--rowH', rowH + 'px'); requestAnimationFrame(stemFit);
+  r.setProperty('--M', M + 'px'); r.setProperty('--cy', cy + 'px'); { const hh0 = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hh')) || 0; r.setProperty('--shy', (port && !mob ? Math.max(-hh0 / 3, Math.min(48, Math.round(innerHeight / 2 - (hh0 + cy)))) : 0) + 'px') } r.setProperty('--rowH', rowH + 'px'); requestAnimationFrame(stemFit);
   r.setProperty('--cw', cw + 'px'); r.setProperty('--bs', bs + 'px'); r.setProperty('--ls', ls + 'px'); r.setProperty('--lc', lc * 1.1 + 'px');
   r.setProperty('--bx', bx + 'px'); r.setProperty('--hz', (histMax + 30) + 'px');   // big logo: centred between page edge and outer arc
   $('pitch').style.width = cw + 'px';
@@ -1038,10 +1040,24 @@ function buildEcho(lx, rw, cw, cy){
   $('echoW').style.webkitMaskImage = 'none'; $('echoW').style.maskImage = 'none';
   ECHO.circ = [...svg.children]; ECHO.da = [];
   { const dv = $('echoDots'); dv.setAttribute('viewBox', `0 0 ${w} ${h}`); dv.innerHTML = rs.map((r, i) => i ? `<circle cx="${cx}" cy="${cy}" r="${r.toFixed(1)}" stroke-dasharray="0.1 9" opacity="0"/>` : '').join(''); ECHO.dots = [...dv.children].filter(Boolean) }
+  if (!ROT.raf) ECHO.circ.forEach((c, i) => rotSet(i, ROT.on ? 90 : 0));
   echoGaps();
   echoDraw();
 }
 
+
+
+/* ---------- portrait: on kick-off the rings spin 90 deg, centre ring first, rippling outwards ---------- */
+function rotSet(i, a){ const t = a ? `rotate(${a.toFixed(2)}deg)` : ''; for (const c of [ECHO.circ && ECHO.circ[i], ECHO.dots && ECHO.dots[i - 1]]) if (c){ c.style.transformOrigin = `${ECHO.cx}px ${ECHO.cy}px`; c.style.transform = t } }
+function rotFrame(now){
+  ROT.raf = 0; const el = (now - ROT.t0) / 1000, n = ECHO.circ ? ECHO.circ.length : 0; let done = true;
+  for (let i = 0; i < n; i++){ const k = Math.max(0, Math.min(1, (el - i * .12) / 1.4)), e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; ROT.a[i] = ROT.on ? e * 90 : (1 - e) * 90; if (k < 1) done = false; rotSet(i, ROT.a[i]) }
+  if (!done) ROT.raf = requestAnimationFrame(rotFrame);
+}
+function rotSync(){
+  const want = document.body.dataset.port === '1' && document.body.dataset.ph === 'match';
+  if (want !== ROT.on){ ROT.on = want; ROT.t0 = performance.now(); if (!ROT.raf) ROT.raf = requestAnimationFrame(rotFrame) }
+}
 
 /* ---------- FX 2 heartbeat + FX 3 dot waves ---------- */
 function hbOn(){ return S.fx2 === 2 && CLK.run && !CLK.ended && S.phase === 'match' }
@@ -1052,6 +1068,7 @@ function hbFrame(now){
   HB.raf = requestAnimationFrame(hbFrame);
 }
 function fxSync(){
+  rotSync();
   if (hbOn() && !HB.raf){ HB.t0 = performance.now(); HB.raf = requestAnimationFrame(hbFrame) }
   else if (!hbOn() && !HB.raf && HB.k !== 1){ HB.k = 1; ECHO.args && buildEcho(...ECHO.args) }
   F3.to = S.fx2 === 3 && document.body.dataset.ph === 'match' ? 1 : 0;
@@ -1106,7 +1123,7 @@ function echoGaps(){
     }
     let da = '';
     if (gp.length){
-      const seg = []; for (const [a, b] of gp){ let A = ((a % TAU) + TAU) % TAU, B = A + (b - a); if (B > TAU){ seg.push([A, TAU]); seg.push([0, B - TAU]) } else seg.push([A, B]) }
+      const rot = (ROT.a[i] || 0) * Math.PI / 180, seg = []; for (const [a0, b0] of gp){ const a = a0 - rot, b = b0 - rot; let A = ((a % TAU) + TAU) % TAU, B = A + (b - a); if (B > TAU){ seg.push([A, TAU]); seg.push([0, B - TAU]) } else seg.push([A, B]) }
       seg.sort((u, v) => u[0] - v[0]); const m = []; for (const q of seg){ const l = m[m.length - 1]; if (l && q[0] <= l[1]) l[1] = Math.max(l[1], q[1]); else m.push(q.slice()) }
       const parts = []; let at = 0; for (const [a, b] of m){ parts.push(((a - at) * r).toFixed(1), ((b - a) * r).toFixed(1)); at = b } parts.push(((TAU - at) * r).toFixed(1), '0'); da = parts.join(' ');
     }
