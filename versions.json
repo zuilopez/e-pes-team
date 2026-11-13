@@ -118,5 +118,11 @@
   "label": "v.1.3o",
   "date": "13/11/2026",
   "note": "Vạch giữa sân đối xứng tâm (từ vạch trên tới vạch dưới), 2 vạch ngang + vạch giữa rút vào bằng nhau; vạch dưới/vạch giữa đứt 1 khoảng khi gặp PM (PM là 1 khối), ngoài ra liền nét"
+ },
+ {
+  "id": "v1.3p",
+  "label": "v.1.3p",
+  "date": "13/11/2026",
+  "note": "Tên đội giảm 20%, cung logo trong dịch ra 10%; vạch echo đứt một khoảng khi gặp chữ/logo/PM (khoảng đứt = vật + 1/4 chiều rộng mỗi bên)"
  }
 ]

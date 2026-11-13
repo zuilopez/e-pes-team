@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3o</title>
+<title>e-pes-team v.1.3p</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -201,6 +201,7 @@ body[data-ph=match] .r:not(.tm.sel),body[data-ph=match] .arw,body[data-ph=ended]
 .sy svg.gb polygon{fill:currentColor;fill-opacity:.2;stroke:none}.sy svg.gb polygon.hl{fill:var(--sec);fill-opacity:1}
 .sy img{height:100%;width:auto;max-width:calc(var(--ih)*1.5);display:block;object-fit:contain;border-radius:3px}
 .r.hs .re{font-size:var(--fs)}
+.r.tm .re{font-size:calc(var(--fs)*1.1*.8)}.r.tm.hs .re{font-size:calc(var(--fs)*.8)}
 .sy:has(.gb){height:calc(var(--ih)*1.3)}
 .back{position:absolute;top:50%;transform:translateY(-50%) rotate(calc(var(--kD)*-1deg));font-family:var(--hw);font-weight:var(--wS);font-size:17px;letter-spacing:.02em;line-height:1;text-transform:uppercase;height:30px;padding:0 4px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;visibility:hidden;color:var(--ink);transition:color .12s}
 #rl .back{right:calc(100% + 16px)}#rr .back{left:calc(100% + 16px)}
@@ -418,7 +419,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3o</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3p</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -430,7 +431,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3o';
+const CUR = 'v1.3p';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -451,7 +452,8 @@ const VERSIONS = [
  {id:'v1.3l',label:'v.1.3l',date:'13/11/2026',note:'Footer không còn nền sáng hơn đáy sân khi vào trận: lớp vignette không phủ xuống footer nữa (trước đây tạo đường biên mờ ngang)'},
  {id:'v1.3m',label:'v.1.3m',date:'13/11/2026',note:'Khung chữ T thành chữ H nằm ngang (thêm vạch ngang dưới khung); vào trận 2 vạch ngang co trước (5s), rồi vạch giữa sân co từ 2 đầu vào tâm, tổng 15s'},
  {id:'v1.3n',label:'v.1.3n',date:'13/11/2026',note:'Vạch ngang dưới đối xứng vạch trên qua tâm vòng tròn giữa sân (chữ PM hiện thì đè lên vạch)'},
- {id:'v1.3o',label:'v.1.3o',date:'13/11/2026',note:'Vạch giữa sân đối xứng tâm (từ vạch trên tới vạch dưới), 2 vạch ngang + vạch giữa rút vào bằng nhau; vạch dưới/vạch giữa đứt 1 khoảng khi gặp PM (PM là 1 khối), ngoài ra liền nét'}
+ {id:'v1.3o',label:'v.1.3o',date:'13/11/2026',note:'Vạch giữa sân đối xứng tâm (từ vạch trên tới vạch dưới), 2 vạch ngang + vạch giữa rút vào bằng nhau; vạch dưới/vạch giữa đứt 1 khoảng khi gặp PM (PM là 1 khối), ngoài ra liền nét'},
+ {id:'v1.3p',label:'v.1.3p',date:'13/11/2026',note:'Tên đội giảm 20%, cung logo trong dịch ra 10%; vạch echo đứt một khoảng khi gặp chữ/logo/PM (khoảng đứt = vật + 1/4 chiều rộng mỗi bên)'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
@@ -822,7 +824,7 @@ function layout(){
   if (mob){ g = 8; bs = 0 }
   const r = document.documentElement.style;
   r.setProperty('--M', M + 'px'); r.setProperty('--cy', cy + 'px'); r.setProperty('--rowH', rowH + 'px'); requestAnimationFrame(stemFit);
-  r.setProperty('--cw', cw + 'px'); r.setProperty('--bs', bs + 'px'); r.setProperty('--ls', ls + 'px'); r.setProperty('--lc', lc + 'px');
+  r.setProperty('--cw', cw + 'px'); r.setProperty('--bs', bs + 'px'); r.setProperty('--ls', ls + 'px'); r.setProperty('--lc', lc * 1.1 + 'px');
   r.setProperty('--bx', bx + 'px'); r.setProperty('--hz', (histMax + 30) + 'px');   // big logo: centred between page edge and outer arc
   $('pitch').style.width = cw + 'px';
   document.body.dataset.port = port ? '1' : '';
@@ -1026,18 +1028,55 @@ function buildEcho(lx, rw, cw, cy){
   svg.innerHTML = rs.map(r => `<circle cx="${cx}" cy="${cy}" r="${r.toFixed(1)}" stroke-opacity="${(.42 * Math.max(.12, 1 - (r - rc) / (rmax - rc + 1) * .9)).toFixed(3)}"/>`).join('');
   const lit = $('lit'); lit.setAttribute('cx', cx); lit.setAttribute('cy', cy);
   ECHO = {w, h, cx, cy, rc, rs, args:[lx, rw, cw, cy]};
-  // fade the lines while they cross the selection areas, clear again outside
-  const L0 = lx, L1 = lx + rw, R0 = w - lx - rw, R1 = w - lx, rp = 70, lo = 'rgba(0,0,0,.2)';
-  const g = `linear-gradient(to right,#000 ${L0 - rp}px,${lo} ${L0 + 24}px,${lo} ${L1 - 24}px,#000 ${L1 + rp}px,#000 ${R0 - rp}px,${lo} ${R0 + 24}px,${lo} ${R1 - 24}px,#000 ${R1 + rp}px)`;
-  const ew = $('echoW'); ew.style.webkitMaskImage = MOB() ? 'none' : g; ew.style.maskImage = MOB() ? 'none' : g;
+  $('echoW').style.webkitMaskImage = 'none'; $('echoW').style.maskImage = 'none';
+  ECHO.circ = [...svg.children]; ECHO.da = [];
+  echoGaps();
   echoDraw();
 }
+
+/* ---------- echo breaks: a ring is cut where it meets text / a logo (gap = the item + 1/4 of its width each side); PM counts as one block ---------- */
+function echoGaps(){
+  if (!ECHO.rs || !ECHO.circ) return;
+  const st = $('stage').getBoundingClientRect(), cx = ECHO.cx, cy = ECHO.cy, TAU = Math.PI * 2, rects = [];
+  const op = e => { let o = 1; for (let n = e, k = 0; n && k < 3; n = n.parentElement, k++) o *= +getComputedStyle(n).opacity; return o };
+  document.querySelectorAll('.r .re,.r .ig,.r .sy,.side,.bgl,.lab,#hist').forEach(e => {
+    if (e.id !== 'hist' && e.closest('#hist')) return;
+    const b = e.getBoundingClientRect(); if (b.width < 2 || b.height < 2 || op(e) < .08) return;
+    const px = b.width * .25, x0 = b.left - st.left - px, x1 = b.right - st.left + px, y0 = b.top - st.top - 3, y1 = b.bottom - st.top + 3;
+    if (cx >= x0 && cx <= x1 && cy >= y0 && cy <= y1) return;
+    const dx = Math.max(x0 - cx, 0, cx - x1), dy = Math.max(y0 - cy, 0, cy - y1), dmin = Math.hypot(dx, dy);
+    const cs = [[x0, y0], [x1, y0], [x0, y1], [x1, y1]], dmax = Math.max(...cs.map(([x, y]) => Math.hypot(x - cx, y - cy)));
+    const am = Math.atan2((y0 + y1) / 2 - cy, (x0 + x1) / 2 - cx), ds = cs.map(([x, y]) => { let d = Math.atan2(y - cy, x - cx) - am; while (d > Math.PI) d -= TAU; while (d < -Math.PI) d += TAU; return d });
+    rects.push({x0, x1, y0, y1, dmin, dmax, am, lo: Math.min(...ds), hi: Math.max(...ds)});
+  });
+  ECHO.rs.forEach((r, i) => {
+    const gp = [];
+    for (const q of rects){
+      if (r < q.dmin - 1 || r > q.dmax + 1) continue;
+      const step = Math.max(.0015, 2 / r); let a0 = null;
+      for (let d = q.lo - step; d <= q.hi + step; d += step){
+        const x = cx + r * Math.cos(q.am + d), y = cy + r * Math.sin(q.am + d), inn = x >= q.x0 && x <= q.x1 && y >= q.y0 && y <= q.y1;
+        if (inn && a0 === null) a0 = d; else if (!inn && a0 !== null){ gp.push([q.am + a0 - step, q.am + d]); a0 = null }
+      }
+      if (a0 !== null) gp.push([q.am + a0 - step, q.am + q.hi + step]);
+    }
+    let da = '';
+    if (gp.length){
+      const seg = []; for (const [a, b] of gp){ let A = ((a % TAU) + TAU) % TAU, B = A + (b - a); if (B > TAU){ seg.push([A, TAU]); seg.push([0, B - TAU]) } else seg.push([A, B]) }
+      seg.sort((u, v) => u[0] - v[0]); const m = []; for (const q of seg){ const l = m[m.length - 1]; if (l && q[0] <= l[1]) l[1] = Math.max(l[1], q[1]); else m.push(q.slice()) }
+      const parts = []; let at = 0; for (const [a, b] of m){ parts.push(((a - at) * r).toFixed(1), ((b - a) * r).toFixed(1)); at = b } parts.push(((TAU - at) * r).toFixed(1), '0'); da = parts.join(' ');
+    }
+    ECHO.da[i] = da; const c = ECHO.circ[i]; if (c && c.getAttribute('stroke-dasharray') !== (da || null)){ da ? c.setAttribute('stroke-dasharray', da) : c.removeAttribute('stroke-dasharray') }
+  });
+  echoDraw();
+}
+setInterval(() => { if (!document.hidden) echoGaps() }, 140);
 /* ripple: one lit ring that jumps ring to ring, one full outward pass takes "pace" seconds */
 const EA = {p:0, raf:0, last:0};
 function echoDraw(){
   const c = $('lit'), n = ECHO.rs ? ECHO.rs.length : 0; if (!c || !n) return;
   const i = Math.max(0, Math.min(n - 1, Math.floor(EA.p * n)));
-  c.setAttribute('r', ECHO.rs[i].toFixed(1));
+  c.setAttribute('r', ECHO.rs[i].toFixed(1)); const dd = ECHO.da && ECHO.da[i]; dd ? c.setAttribute('stroke-dasharray', dd) : c.removeAttribute('stroke-dasharray');
   c.style.opacity = Math.max(.15, 1 - .85 * i / n).toFixed(3); c.style.stroke = S.ec === 'sec' ? 'var(--sec)' : 'var(--theme)';
 }
 function echoFrame(now){
