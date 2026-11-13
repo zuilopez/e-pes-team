@@ -70,5 +70,11 @@
   "label": "v.1.3g",
   "date": "13/11/2026",
   "note": "QG hiện quốc kỳ (bỏ logo liên đoàn), bỏ logo trên sao; giao diện xanh: since trắng; giao diện hồng: slogan xanh"
+ },
+ {
+  "id": "v1.3h",
+  "label": "v.1.3h",
+  "date": "13/11/2026",
+  "note": "Ngưỡng ≥ 3 sao; thêm 22 CLB (Süper Lig, Eredivisie, Bồ Đào Nha, Brasil, Argentina, AFC...) và 12 QG; hiện số đội dưới tên giải/khu vực; icon giải CLB x2"
  }
 ]
