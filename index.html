@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3n</title>
+<title>e-pes-team v.1.3o</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -74,7 +74,7 @@ body[data-ph=match] #echoW{clip-path:inset(calc(var(--hh,100px)*-1) 0 0 0)}
 #echoSvg,#echoLit{position:absolute;inset:0;width:100%;height:100%;fill:none;overflow:visible}
 #echoSvg{stroke:var(--ink);stroke-width:1.5}
 #echoLit circle{stroke-width:3;fill:none}
-.stem{position:absolute;left:50%;top:0;bottom:0;width:1.5px;margin-left:-.75px;background:var(--ink);opacity:.35}
+.stem{position:absolute;left:50%;top:0;height:min(calc(var(--cy)*2),100%);width:1.5px;margin-left:-.75px;background:var(--ink);opacity:.35}
 .ring{position:absolute;left:50%;top:var(--cy);width:calc(45cqw + 3px);height:calc(45cqw + 3px);transform:translate(-50%,-50%);border-radius:50%;background:var(--bg);border:1.5px solid color-mix(in srgb,var(--ink) 42%,transparent)}
 body[data-port="1"] .bgl{z-index:4}
 body[data-port="1"] .lab{z-index:3;background:var(--bg);padding:.15em .4em}
@@ -302,7 +302,7 @@ body.vo .vbg{display:block}
 .se{width:2.1em;font:inherit;text-align:center;color:var(--ink);background:transparent;border:1px solid color-mix(in srgb,var(--ink) 40%,transparent);border-radius:6px;padding:1px 0;outline:0}
 #hist .h .s .se{pointer-events:auto}
 body[data-port="1"]:not(.hopen) .stem{-webkit-mask-image:var(--sb);mask-image:var(--sb)}
-body.hopen .stem{-webkit-mask-image:var(--sg);mask-image:var(--sg)}
+body.hopen .stem{-webkit-mask-image:var(--pg,var(--sg));mask-image:var(--pg,var(--sg))}
 @keyframes fanA{from{opacity:0;transform:translateX(70%)}to{opacity:1;transform:none}}
 @keyframes fanB{from{opacity:0;transform:translateX(-70%)}to{opacity:1;transform:none}}
 @keyframes fadeI{from{opacity:0}to{opacity:1}}
@@ -326,11 +326,11 @@ body[data-ph=match] #t1{scale:1.07}
 #t1{transform-origin:50% 0!important}
 #sub{clip-path:inset(-40% -6% -40% -6%);transition:color .25s,clip-path 5s cubic-bezier(.6,0,.4,1)}
 body[data-ph=match] #sub{clip-path:inset(-40% 50% -40% 50%)}
-main::before,main::after{transform-origin:50% 50%;transition:transform 5s cubic-bezier(.6,0,.4,1)}
-body[data-ph=match] main::before,body[data-ph=match] main::after{transform:scaleX(0);transition-delay:0s}
-main::before,main::after{transition-delay:3s}
-.stem{transform-origin:50% var(--cy);transition:transform 3s cubic-bezier(.6,0,.4,1) 0s}
-body[data-ph=match] .stem{transform:scaleY(0);transition:transform 10s cubic-bezier(.6,0,.4,1) 5s}
+main::before,main::after{clip-path:inset(0 0 0 0);transition:clip-path 5s cubic-bezier(.6,0,.4,1) 3s}
+main::after{-webkit-mask-image:var(--bm,none);mask-image:var(--bm,none)}
+body[data-ph=match] main::before,body[data-ph=match] main::after{clip-path:inset(0 50% 0 50%);transition-delay:0s}
+.stem{clip-path:inset(0 0 0 0);transition:clip-path 3s cubic-bezier(.6,0,.4,1) 0s}
+body[data-ph=match] .stem{clip-path:inset(calc(var(--cy)) 0 calc(var(--cy)) 0);transition:clip-path 10s cubic-bezier(.6,0,.4,1) 5s}
 #fsl{position:absolute;left:0;right:0;top:30px;height:0;pointer-events:none}
 #fsl div{position:absolute;top:0;transform:translateY(-50%);display:flex;justify-content:space-between;align-items:center;white-space:nowrap}
 #fsl i{font-style:normal;font-family:var(--hw);font-weight:var(--wS);color:var(--subC);line-height:1;opacity:0;transition:opacity 1s ease 0s}
@@ -418,7 +418,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3n</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3o</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -430,7 +430,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3n';
+const CUR = 'v1.3o';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -450,7 +450,8 @@ const VERSIONS = [
  {id:'v1.3k',label:'v.1.3k',date:'13/11/2026',note:'Sửa triệt để vạch mờ ở footer khi vào trận: vòng echo bị cắt đúng theo đáy sân (trước đây vùng cắt mở thêm 82px xuống footer)'},
  {id:'v1.3l',label:'v.1.3l',date:'13/11/2026',note:'Footer không còn nền sáng hơn đáy sân khi vào trận: lớp vignette không phủ xuống footer nữa (trước đây tạo đường biên mờ ngang)'},
  {id:'v1.3m',label:'v.1.3m',date:'13/11/2026',note:'Khung chữ T thành chữ H nằm ngang (thêm vạch ngang dưới khung); vào trận 2 vạch ngang co trước (5s), rồi vạch giữa sân co từ 2 đầu vào tâm, tổng 15s'},
- {id:'v1.3n',label:'v.1.3n',date:'13/11/2026',note:'Vạch ngang dưới đối xứng vạch trên qua tâm vòng tròn giữa sân (chữ PM hiện thì đè lên vạch)'}
+ {id:'v1.3n',label:'v.1.3n',date:'13/11/2026',note:'Vạch ngang dưới đối xứng vạch trên qua tâm vòng tròn giữa sân (chữ PM hiện thì đè lên vạch)'},
+ {id:'v1.3o',label:'v.1.3o',date:'13/11/2026',note:'Vạch giữa sân đối xứng tâm (từ vạch trên tới vạch dưới), 2 vạch ngang + vạch giữa rút vào bằng nhau; vạch dưới/vạch giữa đứt 1 khoảng khi gặp PM (PM là 1 khối), ngoài ra liền nét'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
@@ -820,7 +821,7 @@ function layout(){
   if (!port && !mob){ const free = vw / 2 - outer; bs = Math.min(bs, Math.max(60, free - 2 * g)); bx = Math.max(bs / 2, free - gs * 1.5 - bs / 2); bx *= 1.15 }      // landscape: outer crest centred in the free space, equal gaps
   if (mob){ g = 8; bs = 0 }
   const r = document.documentElement.style;
-  r.setProperty('--M', M + 'px'); r.setProperty('--cy', cy + 'px'); r.setProperty('--rowH', rowH + 'px');
+  r.setProperty('--M', M + 'px'); r.setProperty('--cy', cy + 'px'); r.setProperty('--rowH', rowH + 'px'); requestAnimationFrame(stemFit);
   r.setProperty('--cw', cw + 'px'); r.setProperty('--bs', bs + 'px'); r.setProperty('--ls', ls + 'px'); r.setProperty('--lc', lc + 'px');
   r.setProperty('--bx', bx + 'px'); r.setProperty('--hz', (histMax + 30) + 'px');   // big logo: centred between page edge and outer arc
   $('pitch').style.width = cw + 'px';
@@ -919,7 +920,21 @@ const _ch = choose; choose = function(side, tm){ const r = _ch(side, tm); render
 addEventListener('resize', () => requestAnimationFrame(renderMV));
 
 /* centre line must not run through the palette dots / history: it ends just above them and shrinks when they grow */
-function stemFit(){ const h = $('hist'), st = document.querySelector('.stem'), sg = $('stage'); if (!h || !st) return; const r = h.getBoundingClientRect(), g = sg.getBoundingClientRect(); st.style.bottom = Math.max(0, g.bottom - r.top + 8) + 'px' }
+function stemFit(){
+  const h = $('hist'), st = document.querySelector('.stem'), sg = $('stage'), mn = document.querySelector('main'); if (!h || !st || !mn) return;
+  const r = h.getBoundingClientRect(), g = sg.getBoundingClientRect(), W = innerWidth, lx = W * .025, lw = W * .95;
+  // centre line: one gap where it runs through the PM block (PM = one unit), continuous elsewhere
+  const y1 = Math.max(0, r.top - g.top - 8);
+  st.style.setProperty('--pg', `linear-gradient(to bottom,#000 ${y1}px,transparent ${y1}px)`);
+  // bottom rule: same standard — one gap per text/picture block it meets, PM counted once as a whole
+  const cy = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--cy')) || 0, ly = g.top + Math.min(cy * 2, g.height - 1.5);
+  const gaps = [];
+  if (r.top - 4 <= ly && ly <= r.bottom + 4) gaps.push([r.left - 14, r.right + 14]);
+  document.querySelectorAll('.r,.bgl,.lab').forEach(e => { if (h.contains(e)) return; const b = e.getBoundingClientRect(); if (b.width && b.top <= ly && ly <= b.bottom && +getComputedStyle(e).opacity > .05) gaps.push([b.left - 8, b.right + 8]) });
+  gaps.sort((a, b) => a[0] - b[0]); const m = []; for (const q of gaps){ const l = m[m.length - 1]; if (l && q[0] <= l[1]) l[1] = Math.max(l[1], q[1]); else m.push(q.slice()) }
+  let o = '#000 0', last = 0; for (const [a, b] of m){ const a2 = Math.max(0, a - lx), b2 = Math.min(lw, b - lx); if (b2 <= a2 || a2 < last) continue; o += `,#000 ${a2}px,transparent ${a2}px,transparent ${b2}px,#000 ${b2}px`; last = b2 }
+  mn.style.setProperty('--bm', m.length ? `linear-gradient(to right,${o})` : 'none');
+}
 if (window.ResizeObserver) new ResizeObserver(stemFit).observe($('hist'));
 addEventListener('resize', stemFit); setTimeout(stemFit, 300);
 function drawFor(side, mode){
