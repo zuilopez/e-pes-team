@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3u</title>
+<title>e-pes-team v.1.3v</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -162,7 +162,8 @@ body[data-ph=match] #echoW{-webkit-mask-image:none!important;mask-image:none!imp
 #hist .ht{cursor:pointer;pointer-events:auto;transition:opacity .2s}#hist .ht:hover{opacity:1}
 #hs{transition:max-height .25s cubic-bezier(.2,.8,.2,1),opacity .2s,transform .25s cubic-bezier(.2,.8,.2,1)}
 body:not(.hopen) #hs{max-height:0!important;opacity:0;transform:translateY(46px);pointer-events:none;overflow:hidden}
-#hbg{transition:opacity .4s}body:not(.hopen) #hbg{opacity:0}
+#hbg{transition:opacity .4s,translate 5s cubic-bezier(.65,0,.25,1)}#hist{transition:translate 5s cubic-bezier(.65,0,.25,1)}
+body[data-port="1"][data-ph=match] #hist,body[data-port="1"][data-ph=match] #hbg{translate:0 calc(var(--shy,0px)*-1)}body:not(.hopen) #hbg{opacity:0}
 #pq{display:flex;gap:10px;justify-content:center;margin-bottom:10px;pointer-events:auto}
 #pq button{width:18px;height:18px;border-radius:50%;border:1px solid color-mix(in srgb,var(--ink) 40%,transparent);padding:0;cursor:pointer;transition:transform .15s}
 #pq button:hover{transform:scale(1.2)}#pq button.on{box-shadow:0 0 0 2px var(--bg),0 0 0 3.5px var(--sec)}
@@ -408,10 +409,6 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
       <input type="range" id="zfc" min="0" max="100" step="1">
       <h4><span data-i="zfv">Convergence</span><b id="zfvv"></b></h4>
       <input type="range" id="zfv" min="0" max="100" step="1">
-      <h4><span data-i="zfm">Amount in match</span><b id="zfmv"></b></h4>
-      <input type="range" id="zfm" min="0" max="100" step="1">
-      <h4><span data-i="zfd">Time to match amount</span><b id="zfdv"></b></h4>
-      <input type="range" id="zfd" min="1" max="15" step=".5">
       <h4><span data-i="zfo">Opacity</span><b id="zfov"></b></h4>
       <input type="range" id="zfo" min="10" max="100" step="1">
     </section></div></div>
@@ -429,7 +426,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3u</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3v</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -441,7 +438,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3u';
+const CUR = 'v1.3v';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -468,7 +465,8 @@ const VERSIONS = [
  {id:'v1.3r',label:'v.1.3r',date:'13/11/2026',note:'Layout dọc: vào trận các vòng sân xoay 90° từ vòng giữa lan ra ngoài; layout + nền sân dịch để vòng tròn giữa sân nằm đúng tâm màn hình (header/footer co giãn theo)'},
  {id:'v1.3s',label:'v.1.3s',date:'13/11/2026',note:'Bỏ FX 3; sửa lỗi trang tự trượt xuống (transition hàng grid chỉ còn áp dụng khi vào/ra trận ở layout dọc); ẩn vòng ripple vàng khi chưa chạy đồng hồ'},
  {id:'v1.3t',label:'v.1.3t',date:'13/11/2026',note:'Sửa: bỏ đổi chiều cao header ở layout dọc (tiêu đề không tụt khỏi since, dịch sân bằng offset stage+footer); ripple liền nét như cũ; zoom blur lúc vào trận chỉnh được trong VAR (mức + thời gian), bớt tối ở mức cao'},
- {id:'v1.3u',label:'v.1.3u',date:'13/11/2026',note:'Footer/VAR không dịch khi dời sân ở layout dọc; Heartbeat đổi thành Beat: mỗi nhịp vòng zoom vào 1 lần rồi giãn ra, xong thì ripple nhảy 1 vòng; zoom blur nhẹ hơn khi chạy anim, chỉnh mức vào trận có hiệu lực ngay'}
+ {id:'v1.3u',label:'v.1.3u',date:'13/11/2026',note:'Footer/VAR không dịch khi dời sân ở layout dọc; Heartbeat đổi thành Beat: mỗi nhịp vòng zoom vào 1 lần rồi giãn ra, xong thì ripple nhảy 1 vòng; zoom blur nhẹ hơn khi chạy anim, chỉnh mức vào trận có hiệu lực ngay'},
+ {id:'v1.3v',label:'v.1.3v',date:'13/11/2026',note:'PM đứng yên khi khung giữa dịch ở layout dọc (không đè lên VAR nữa); bỏ anim zoom blur khi vào trận, trả zoom blur về chỉnh bằng thanh kéo như cũ'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
@@ -495,8 +493,8 @@ function eff(){      // accent colours must never equal the background
 const saved = store.get('ef8_def', null);
 const P = {white:(saved && saved.white) || FACT.white, black:(saved && saved.black) || FACT.black, theme:(saved && saved.theme) || FACT.theme, sec:(saved && saved.sec) || FACT.sec, roles:Object.assign({}, (saved && saved.roles) || FACT.roles)};
 const T = {
- en:{zfm:'Amount in match',zfd:'Time to match amount',efx:'Effect',ef1:'1 · Ripple',ef2:'2 · Beat',hbp:'Beat period',tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'pick teams',spc:'space to play',tEcho:'FX',tHist:'Previous matches',tPal:'Palette',esp:'Ring spacing',zf:'Zoom blur',zfa:'Amount',zfc:'Sharp centre',wtone:'Darken white',zfv:'Convergence',zfo:'Opacity',spp:'space to pause',endm:'end match',newm:'new match',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · real club names',caps:'Slogan · in-game names · kick-off · VAR · history score',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · date/time · tabs · this panel · history title + date',fam:'Typeface',wt:'Weight',sz:'Size',ls:'Letter spacing',sh:'Tilt',hlh:'Header layout',hlr:'Side by side',hlc:'Stacked',green:'Green',pink:'Pink',slt:'Slogan text',tline:'T-line height',ec:'Ripple colour',pace:'Pace',h6:'Matches shown',h7:'Match time limit (minutes)',h8:'Score history',shuf:'shuffle',eTheme:'Theme colour',eSec:'Secondary colour',m3:'3 matches',m5:'5 matches',clr:'clear history',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLUBS',nations:'NATIONS',same:'Both sides cannot pick the same team',needScore:'Enter both scores',saved:'Score saved',none:'no matches yet',rand:'Random (one font per club)',gHand:'Script',gSans:'Grotesk',mode:'Mode',themeSec:'Theme · secondary colour',usedBy:'Colour used by',light:'White',dark:'Black',rBg:'Background',rName:'Page-name colour',rSub:'Slogan colour',save:'Save as default',reset:'Reset',theme:'Theme',sec:'Secondary'},
- vi:{zfm:'Mức khi vào trận',zfd:'Thời gian chạy tới mức đó',efx:'Hiệu ứng',ef1:'1 · Gợn sóng',ef2:'2 · Beat',hbp:'Chu kỳ beat',tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'chọn đội',spc:'space để chơi',tEcho:'FX',tHist:'Trận trước',tPal:'Bảng màu',esp:'Khoảng cách vòng',zf:'Zoom blur',zfa:'Cường độ',zfc:'Tâm nét',wtone:'Làm tối nền trắng',zfv:'Điểm tụ',zfo:'Độ mờ',spp:'space để dừng',endm:'kết thúc trận',newm:'trận mới',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · tên thật CLB',caps:'Khẩu hiệu · tên fake · kick-off · VAR · tỉ số lịch sử',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · ngày giờ · tab · bảng VAR này · tiêu đề + ngày lịch sử',fam:'Typeface',wt:'Độ đậm',sz:'Kích thước',ls:'Giãn chữ',sh:'Xoay (tilt)',hlh:'Bố cục header',hlr:'Ngang trái – phải',hlc:'Dọc trên – dưới',green:'Green',pink:'Pink',slt:'Dòng khẩu hiệu',tline:'Độ cao vạch T',ec:'Màu loang',pace:'Tốc độ',h6:'Số trận hiển thị',h7:'Giới hạn thời gian trận (phút)',h8:'Lịch sử tỉ số',shuf:'shuffle',eTheme:'Màu theme',eSec:'Màu phụ',m3:'3 trận',m5:'5 trận',clr:'xoá lịch sử',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLB',nations:'QUỐC GIA',same:'Hai bên không thể chọn cùng một đội',needScore:'Nhập tỉ số hai bên',saved:'Đã lưu tỉ số',none:'chưa có trận nào',rand:'Random (mỗi CLB một font)',gHand:'Script',gSans:'Grotesk',mode:'Chế độ',themeSec:'Màu theme · màu phụ',usedBy:'Mục dùng màu nào',light:'White',dark:'Black',rBg:'Nền',rName:'Màu pagename',rSub:'Màu khẩu hiệu',save:'Lưu làm mặc định',reset:'Reset',theme:'Theme',sec:'Phụ'}
+ en:{efx:'Effect',ef1:'1 · Ripple',ef2:'2 · Beat',hbp:'Beat period',tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'pick teams',spc:'space to play',tEcho:'FX',tHist:'Previous matches',tPal:'Palette',esp:'Ring spacing',zf:'Zoom blur',zfa:'Amount',zfc:'Sharp centre',wtone:'Darken white',zfv:'Convergence',zfo:'Opacity',spp:'space to pause',endm:'end match',newm:'new match',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · real club names',caps:'Slogan · in-game names · kick-off · VAR · history score',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · date/time · tabs · this panel · history title + date',fam:'Typeface',wt:'Weight',sz:'Size',ls:'Letter spacing',sh:'Tilt',hlh:'Header layout',hlr:'Side by side',hlc:'Stacked',green:'Green',pink:'Pink',slt:'Slogan text',tline:'T-line height',ec:'Ripple colour',pace:'Pace',h6:'Matches shown',h7:'Match time limit (minutes)',h8:'Score history',shuf:'shuffle',eTheme:'Theme colour',eSec:'Secondary colour',m3:'3 matches',m5:'5 matches',clr:'clear history',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLUBS',nations:'NATIONS',same:'Both sides cannot pick the same team',needScore:'Enter both scores',saved:'Score saved',none:'no matches yet',rand:'Random (one font per club)',gHand:'Script',gSans:'Grotesk',mode:'Mode',themeSec:'Theme · secondary colour',usedBy:'Colour used by',light:'White',dark:'Black',rBg:'Background',rName:'Page-name colour',rSub:'Slogan colour',save:'Save as default',reset:'Reset',theme:'Theme',sec:'Secondary'},
+ vi:{efx:'Hiệu ứng',ef1:'1 · Gợn sóng',ef2:'2 · Beat',hbp:'Chu kỳ beat',tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'chọn đội',spc:'space để chơi',tEcho:'FX',tHist:'Trận trước',tPal:'Bảng màu',esp:'Khoảng cách vòng',zf:'Zoom blur',zfa:'Cường độ',zfc:'Tâm nét',wtone:'Làm tối nền trắng',zfv:'Điểm tụ',zfo:'Độ mờ',spp:'space để dừng',endm:'kết thúc trận',newm:'trận mới',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · tên thật CLB',caps:'Khẩu hiệu · tên fake · kick-off · VAR · tỉ số lịch sử',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · ngày giờ · tab · bảng VAR này · tiêu đề + ngày lịch sử',fam:'Typeface',wt:'Độ đậm',sz:'Kích thước',ls:'Giãn chữ',sh:'Xoay (tilt)',hlh:'Bố cục header',hlr:'Ngang trái – phải',hlc:'Dọc trên – dưới',green:'Green',pink:'Pink',slt:'Dòng khẩu hiệu',tline:'Độ cao vạch T',ec:'Màu loang',pace:'Tốc độ',h6:'Số trận hiển thị',h7:'Giới hạn thời gian trận (phút)',h8:'Lịch sử tỉ số',shuf:'shuffle',eTheme:'Màu theme',eSec:'Màu phụ',m3:'3 trận',m5:'5 trận',clr:'xoá lịch sử',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLB',nations:'QUỐC GIA',same:'Hai bên không thể chọn cùng một đội',needScore:'Nhập tỉ số hai bên',saved:'Đã lưu tỉ số',none:'chưa có trận nào',rand:'Random (mỗi CLB một font)',gHand:'Script',gSans:'Grotesk',mode:'Chế độ',themeSec:'Màu theme · màu phụ',usedBy:'Mục dùng màu nào',light:'White',dark:'Black',rBg:'Nền',rName:'Màu pagename',rSub:'Màu khẩu hiệu',save:'Lưu làm mặc định',reset:'Reset',theme:'Theme',sec:'Phụ'}
 };
 let LANG = store.get('ef9_lang', 'en'); if (!T[LANG]) LANG = 'en';
 const t = k => T[LANG][k];
@@ -509,7 +507,7 @@ const DEMO = [['Borussia Dortmund', 'Real Betis', 2, 1, 0], ['RC Lens', 'Como 19
 const S = {
   fx: {n:Object.assign({}, FXD.n, fx0.n), s:Object.assign({}, FXD.s, fx0.s), c:Object.assign({}, FXD.c, fx0.c), d:Object.assign({}, FXD.d, fx0.d)}, tgt:'n',
   seed: store.get('ef5_seed', 1), sub: store.get('ef5_sub', 'Champion of NTF'),
-  hist: store.get('ef5_hist', []), zf: Object.assign({t:'zoom', a:35, c:55, v:60, o:85, m:100, d:5}, store.get('ef20_zf', {})), wd: 0, hmax: 3, mins: store.get('ef9_mins', 10),
+  hist: store.get('ef5_hist', []), zf: Object.assign({t:'zoom', a:35, c:55, v:60, o:85}, store.get('ef20_zf', {})), wd: 0, hmax: 3, mins: store.get('ef9_mins', 10),
   fx2: Math.min(2, store.get('ef21_efx', 1)), hb: store.get('ef21_hb', 2), ec: store.get('ef10_ec', 'theme'), es: store.get('ef14_es', 210), pace: store.get('ef11_pace', 3), tl: store.get('ef10_tl', 86), nl: store.get('ef18_nl', 2),
   hl: store.get('ef13_hl', 'row'), phase: 'idle', sa: '', sb: ''
 };
@@ -994,10 +992,10 @@ function zsDraw(cv){      // radial zoom / spin blur of the crest (like imageonl
     const N = 896, w = N / 3.4, c = cv.getContext('2d'); cv.width = cv.height = N; c.clearRect(0, 0, N, N);
     const f = Math.min(w / im.naturalWidth, w / im.naturalHeight), dw = im.naturalWidth * f, dh = im.naturalHeight * f;
     const draw = (g, sc, rot) => { g.save(); g.translate(N / 2, N / 2); g.rotate(rot); g.scale(sc, sc); g.drawImage(im, -dw / 2, -dh / 2, dw, dh); g.restore() };
-    const a = (window.ZA == null ? S.zf.a : window.ZA) / 100, M = ZAF && ZAanim ? 20 : 36;
+    const a = (window.ZA == null ? S.zf.a : window.ZA) / 100, M = 36;
     let cum = 0; const ex = S.zf.v / 22;
     for (let i = 0; i < M && a > 0; i++){ const k = i / (M - 1), wt = Math.pow(1 - k * .97, ex); cum += wt; c.globalAlpha = wt / cum; draw(c, 1 + a * 1.5 * k, 0) }
-    cv.style.opacity = Math.min(1, S.zf.o / 100 * (1 + .45 * a));
+    cv.style.opacity = S.zf.o / 100;
     c.globalAlpha = 1;
     const o = document.createElement('canvas'); o.width = o.height = N; const g = o.getContext('2d'); draw(g, 1, 0);
     const R = w / 2, r0 = R * S.zf.c / 100, gr = g.createRadialGradient(N / 2, N / 2, r0, N / 2, N / 2, r0 + R * .35); gr.addColorStop(0, '#000'); gr.addColorStop(1, 'transparent');
@@ -1018,14 +1016,8 @@ function bigFill(el, tm){
   el.addEventListener('pointerleave', () => { const t = el.firstElementChild; if (t){ t.style.setProperty('--rx', 0); t.style.setProperty('--ry', 0) } });
 });
 /* zoom-blur amount of the crests: idle = slider value (35), runs up to 100 when the match starts (5 s), and back when it ends / is cancelled */
-window.ZA = null; let ZAF = 0, ZAP = '', ZAanim = false;
-function zaPhase(ph){
-  const on = ph === 'match'; if ((ph === ZAP) || (on === (ZAP === 'match'))){ ZAP = ph; return }
-  ZAP = ph; const from = window.ZA == null ? S.zf.a : window.ZA, to = on ? S.zf.m : S.zf.a, t0 = performance.now(), D = S.zf.d * 1000; cancelAnimationFrame(ZAF); let last = 0;
-  const f = now => { const k = Math.min(1, (now - t0) / D), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2; window.ZA = from + (to - from) * e;
-    if (now - last > 60 || k === 1){ last = now; zsAll() } if (k < 1){ ZAanim = true; ZAF = requestAnimationFrame(f) } else { ZAanim = false; ZAF = 0; if (!on) window.ZA = null; zsAll() } };
-  ZAF = requestAnimationFrame(f);
-}
+window.ZA = null;   // zoom blur follows the sliders only (no animation on kick-off)
+function zaPhase(){}
 function renderPitch(){
   $('pa').innerHTML = sideHtml(team.L, 'sa');
   $('pb').innerHTML = sideHtml(team.R, 'sb');
@@ -1279,7 +1271,7 @@ function applyLang(){
 }
 $('lg').onclick = () => { LANG = LANG === 'en' ? 'vi' : 'en'; store.set('ef9_lang', LANG); applyLang() };
 $('subin').value = S.sub; $('mins').value = S.mins; $('pace').value = S.pace; $('pcv').textContent = S.pace + ' s'; $('esp').value = S.es; $('espv').textContent = S.es + ' px'; $('tlr').value = S.tl; $('tlv').textContent = S.tl + '%';
-rall(); pillSet('nlt', S.nl); pillSet('ecr', S.ec); pillSet('efr', S.fx2); $('hbr').value = S.hb; $('hbv').textContent = S.hb + ' s'; $('zfm').value = S.zf.m; $('zfmv').textContent = S.zf.m; $('zfd').value = S.zf.d; $('zfdv').textContent = S.zf.d + ' s'; $('zfa').value = S.zf.a; $('zfav').textContent = S.zf.a; $('zfc').value = S.zf.c; $('zfcv').textContent = S.zf.c; $('zfv').value = S.zf.v; $('zfvv').textContent = S.zf.v; $('zfo').value = S.zf.o; $('zfov').textContent = S.zf.o; pillSet('hm', S.hmax); pillSet('hlt', S.hl);
+rall(); pillSet('nlt', S.nl); pillSet('ecr', S.ec); pillSet('efr', S.fx2); $('hbr').value = S.hb; $('hbv').textContent = S.hb + ' s'; $('zfa').value = S.zf.a; $('zfav').textContent = S.zf.a; $('zfc').value = S.zf.c; $('zfcv').textContent = S.zf.c; $('zfv').value = S.zf.v; $('zfvv').textContent = S.zf.v; $('zfo').value = S.zf.o; $('zfov').textContent = S.zf.o; pillSet('hm', S.hmax); pillSet('hlt', S.hl);
 $('nlt').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.nl = +b.dataset.v; store.set('ef18_nl', S.nl); pillSet('nlt', S.nl); for (const k of ['L','R']) SD[k].rebuild() };
 $('hlt').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.hl = b.dataset.v; store.set('ef13_hl', S.hl); pillSet('hlt', S.hl); fit() };
 applyLang();
@@ -1304,7 +1296,7 @@ function syncFont0(){ const f = S.fx[S.tgt]; $('wtv').textContent = f.w; $('szv'
 $('shuf').onclick = () => { S.seed = Math.floor(Math.random() * 1e6); store.set('ef5_seed', S.seed); refreshFonts() };
 $('subin').oninput = e => { S.sub = e.target.value.trim() || 'Champion of NTF'; store.set('ef5_sub', S.sub); applySub() };
 $('tlr').oninput = e => { S.tl = +e.target.value; store.set('ef10_tl', S.tl); $('tlv').textContent = S.tl + '%'; fit() };
-for (const [id, key] of [['zfa', 'a'], ['zfc', 'c'], ['zfv', 'v'], ['zfo', 'o'], ['zfm', 'm'], ['zfd', 'd']]) $(id).oninput = e => { S.zf[key] = +e.target.value; if (ZAP === 'match' && key === 'm'){ cancelAnimationFrame(ZAF); ZAF = 0; ZAanim = false; window.ZA = S.zf.m } if (ZAP !== 'match' && key === 'a') window.ZA = null; $(id + 'v').textContent = S.zf[key] + (key === 'd' ? ' s' : ''); store.set('ef20_zf', S.zf); zsAll() };
+for (const [id, key] of [['zfa', 'a'], ['zfc', 'c'], ['zfv', 'v'], ['zfo', 'o']]) $(id).oninput = e => { S.zf[key] = +e.target.value; $(id + 'v').textContent = S.zf[key]; store.set('ef20_zf', S.zf); zsAll() };
 $('ecr').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.ec = b.dataset.v; store.set('ef10_ec', S.ec); pillSet('ecr', S.ec); echoDraw() };
 $('esp').oninput = e => { S.es = S.esEff = +e.target.value; store.set('ef14_es', S.es); $('espv').textContent = S.es + ' px'; if (ECHO.args) buildEcho(...ECHO.args) };
 $('efr').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.fx2 = +b.dataset.v; store.set('ef21_efx', S.fx2); pillSet('efr', S.fx2); echoSync(); fxSync() };
