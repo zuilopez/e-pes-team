@@ -148,5 +148,11 @@
   "label": "v.1.3t",
   "date": "13/11/2026",
   "note": "Sửa: bỏ đổi chiều cao header ở layout dọc (tiêu đề không tụt khỏi since, dịch sân bằng offset stage+footer); ripple liền nét như cũ; zoom blur lúc vào trận chỉnh được trong VAR (mức + thời gian), bớt tối ở mức cao"
+ },
+ {
+  "id": "v1.3u",
+  "label": "v.1.3u",
+  "date": "13/11/2026",
+  "note": "Footer/VAR không dịch khi dời sân ở layout dọc; Heartbeat đổi thành Beat: mỗi nhịp vòng zoom vào 1 lần rồi giãn ra, xong thì ripple nhảy 1 vòng; zoom blur nhẹ hơn khi chạy anim, chỉnh mức vào trận có hiệu lực ngay"
  }
 ]

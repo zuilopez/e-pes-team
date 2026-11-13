@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3t</title>
+<title>e-pes-team v.1.3u</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -70,7 +70,6 @@ main::before,main::after{content:'';position:absolute;left:2.5vw;right:2.5vw;hei
 main::before{top:0}main::after{top:min(calc(var(--cy)*2),calc(100% - 1.5px))}
 .stage{position:absolute;inset:0;transition:top 5s cubic-bezier(.65,0,.25,1),bottom 5s cubic-bezier(.65,0,.25,1)}
 body[data-port="1"][data-ph=match] .stage{top:var(--shy,0px);bottom:calc(var(--shy,0px)*-1)}
-footer{transition:top 5s cubic-bezier(.65,0,.25,1)}body[data-port="1"][data-ph=match] footer{top:var(--shy,0px)}
 .pitch{position:absolute;left:50%;top:0;bottom:0;transform:translateX(-50%);width:600px;container-type:inline-size;z-index:3}
 #echoW{position:absolute;inset:0;pointer-events:none;overflow:visible;clip-path:inset(0);transition:clip-path 5s cubic-bezier(.65,0,.25,1)}
 body[data-ph=match] #echoW{clip-path:inset(calc(var(--hh,100px)*-1) 0 0 0)}
@@ -395,8 +394,8 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
       <h4 data-i="ec">Ripple colour</h4>
       <div class="row" id="ecr"><button class="pill" data-v="theme" data-i="eTheme">Theme colour</button><button class="pill" data-v="sec" data-i="eSec">Secondary colour</button></div>
       <h4 data-i="efx">Effect</h4>
-      <div class="row" id="efr"><button class="pill" data-v="1" data-i="ef1">1 · Ripple</button><button class="pill" data-v="2" data-i="ef2">2 · Heartbeat</button></div>
-      <h4><span data-i="hbp">Heartbeat period</span><b id="hbv"></b></h4>
+      <div class="row" id="efr"><button class="pill" data-v="1" data-i="ef1">1 · Ripple</button><button class="pill" data-v="2" data-i="ef2">2 · Beat</button></div>
+      <h4><span data-i="hbp">Beat period</span><b id="hbv"></b></h4>
       <input type="range" id="hbr" min="1" max="10" step=".5">
       <h4><span data-i="pace">Pace</span><b id="pcv"></b></h4>
       <input type="range" id="pace" min="1" max="60" step="1">
@@ -430,7 +429,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3t</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3u</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -442,7 +441,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3t';
+const CUR = 'v1.3u';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -468,7 +467,8 @@ const VERSIONS = [
  {id:'v1.3q',label:'v.1.3q',date:'13/11/2026',note:'Thêm chọn hiệu ứng ở tab FX: 1 gợn sóng (như cũ), 2 nhịp tim (echo dồn vào tâm rồi giãn, chu kỳ chỉnh bằng thanh kéo)'},
  {id:'v1.3r',label:'v.1.3r',date:'13/11/2026',note:'Layout dọc: vào trận các vòng sân xoay 90° từ vòng giữa lan ra ngoài; layout + nền sân dịch để vòng tròn giữa sân nằm đúng tâm màn hình (header/footer co giãn theo)'},
  {id:'v1.3s',label:'v.1.3s',date:'13/11/2026',note:'Bỏ FX 3; sửa lỗi trang tự trượt xuống (transition hàng grid chỉ còn áp dụng khi vào/ra trận ở layout dọc); ẩn vòng ripple vàng khi chưa chạy đồng hồ'},
- {id:'v1.3t',label:'v.1.3t',date:'13/11/2026',note:'Sửa: bỏ đổi chiều cao header ở layout dọc (tiêu đề không tụt khỏi since, dịch sân bằng offset stage+footer); ripple liền nét như cũ; zoom blur lúc vào trận chỉnh được trong VAR (mức + thời gian), bớt tối ở mức cao'}
+ {id:'v1.3t',label:'v.1.3t',date:'13/11/2026',note:'Sửa: bỏ đổi chiều cao header ở layout dọc (tiêu đề không tụt khỏi since, dịch sân bằng offset stage+footer); ripple liền nét như cũ; zoom blur lúc vào trận chỉnh được trong VAR (mức + thời gian), bớt tối ở mức cao'},
+ {id:'v1.3u',label:'v.1.3u',date:'13/11/2026',note:'Footer/VAR không dịch khi dời sân ở layout dọc; Heartbeat đổi thành Beat: mỗi nhịp vòng zoom vào 1 lần rồi giãn ra, xong thì ripple nhảy 1 vòng; zoom blur nhẹ hơn khi chạy anim, chỉnh mức vào trận có hiệu lực ngay'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
@@ -495,8 +495,8 @@ function eff(){      // accent colours must never equal the background
 const saved = store.get('ef8_def', null);
 const P = {white:(saved && saved.white) || FACT.white, black:(saved && saved.black) || FACT.black, theme:(saved && saved.theme) || FACT.theme, sec:(saved && saved.sec) || FACT.sec, roles:Object.assign({}, (saved && saved.roles) || FACT.roles)};
 const T = {
- en:{zfm:'Amount in match',zfd:'Time to match amount',efx:'Effect',ef1:'1 · Ripple',ef2:'2 · Heartbeat',hbp:'Heartbeat period',tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'pick teams',spc:'space to play',tEcho:'FX',tHist:'Previous matches',tPal:'Palette',esp:'Ring spacing',zf:'Zoom blur',zfa:'Amount',zfc:'Sharp centre',wtone:'Darken white',zfv:'Convergence',zfo:'Opacity',spp:'space to pause',endm:'end match',newm:'new match',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · real club names',caps:'Slogan · in-game names · kick-off · VAR · history score',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · date/time · tabs · this panel · history title + date',fam:'Typeface',wt:'Weight',sz:'Size',ls:'Letter spacing',sh:'Tilt',hlh:'Header layout',hlr:'Side by side',hlc:'Stacked',green:'Green',pink:'Pink',slt:'Slogan text',tline:'T-line height',ec:'Ripple colour',pace:'Pace',h6:'Matches shown',h7:'Match time limit (minutes)',h8:'Score history',shuf:'shuffle',eTheme:'Theme colour',eSec:'Secondary colour',m3:'3 matches',m5:'5 matches',clr:'clear history',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLUBS',nations:'NATIONS',same:'Both sides cannot pick the same team',needScore:'Enter both scores',saved:'Score saved',none:'no matches yet',rand:'Random (one font per club)',gHand:'Script',gSans:'Grotesk',mode:'Mode',themeSec:'Theme · secondary colour',usedBy:'Colour used by',light:'White',dark:'Black',rBg:'Background',rName:'Page-name colour',rSub:'Slogan colour',save:'Save as default',reset:'Reset',theme:'Theme',sec:'Secondary'},
- vi:{zfm:'Mức khi vào trận',zfd:'Thời gian chạy tới mức đó',efx:'Hiệu ứng',ef1:'1 · Gợn sóng',ef2:'2 · Nhịp tim',hbp:'Chu kỳ nhịp tim',tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'chọn đội',spc:'space để chơi',tEcho:'FX',tHist:'Trận trước',tPal:'Bảng màu',esp:'Khoảng cách vòng',zf:'Zoom blur',zfa:'Cường độ',zfc:'Tâm nét',wtone:'Làm tối nền trắng',zfv:'Điểm tụ',zfo:'Độ mờ',spp:'space để dừng',endm:'kết thúc trận',newm:'trận mới',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · tên thật CLB',caps:'Khẩu hiệu · tên fake · kick-off · VAR · tỉ số lịch sử',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · ngày giờ · tab · bảng VAR này · tiêu đề + ngày lịch sử',fam:'Typeface',wt:'Độ đậm',sz:'Kích thước',ls:'Giãn chữ',sh:'Xoay (tilt)',hlh:'Bố cục header',hlr:'Ngang trái – phải',hlc:'Dọc trên – dưới',green:'Green',pink:'Pink',slt:'Dòng khẩu hiệu',tline:'Độ cao vạch T',ec:'Màu loang',pace:'Tốc độ',h6:'Số trận hiển thị',h7:'Giới hạn thời gian trận (phút)',h8:'Lịch sử tỉ số',shuf:'shuffle',eTheme:'Màu theme',eSec:'Màu phụ',m3:'3 trận',m5:'5 trận',clr:'xoá lịch sử',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLB',nations:'QUỐC GIA',same:'Hai bên không thể chọn cùng một đội',needScore:'Nhập tỉ số hai bên',saved:'Đã lưu tỉ số',none:'chưa có trận nào',rand:'Random (mỗi CLB một font)',gHand:'Script',gSans:'Grotesk',mode:'Chế độ',themeSec:'Màu theme · màu phụ',usedBy:'Mục dùng màu nào',light:'White',dark:'Black',rBg:'Nền',rName:'Màu pagename',rSub:'Màu khẩu hiệu',save:'Lưu làm mặc định',reset:'Reset',theme:'Theme',sec:'Phụ'}
+ en:{zfm:'Amount in match',zfd:'Time to match amount',efx:'Effect',ef1:'1 · Ripple',ef2:'2 · Beat',hbp:'Beat period',tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'pick teams',spc:'space to play',tEcho:'FX',tHist:'Previous matches',tPal:'Palette',esp:'Ring spacing',zf:'Zoom blur',zfa:'Amount',zfc:'Sharp centre',wtone:'Darken white',zfv:'Convergence',zfo:'Opacity',spp:'space to pause',endm:'end match',newm:'new match',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · real club names',caps:'Slogan · in-game names · kick-off · VAR · history score',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · date/time · tabs · this panel · history title + date',fam:'Typeface',wt:'Weight',sz:'Size',ls:'Letter spacing',sh:'Tilt',hlh:'Header layout',hlr:'Side by side',hlc:'Stacked',green:'Green',pink:'Pink',slt:'Slogan text',tline:'T-line height',ec:'Ripple colour',pace:'Pace',h6:'Matches shown',h7:'Match time limit (minutes)',h8:'Score history',shuf:'shuffle',eTheme:'Theme colour',eSec:'Secondary colour',m3:'3 matches',m5:'5 matches',clr:'clear history',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLUBS',nations:'NATIONS',same:'Both sides cannot pick the same team',needScore:'Enter both scores',saved:'Score saved',none:'no matches yet',rand:'Random (one font per club)',gHand:'Script',gSans:'Grotesk',mode:'Mode',themeSec:'Theme · secondary colour',usedBy:'Colour used by',light:'White',dark:'Black',rBg:'Background',rName:'Page-name colour',rSub:'Slogan colour',save:'Save as default',reset:'Reset',theme:'Theme',sec:'Secondary'},
+ vi:{zfm:'Mức khi vào trận',zfd:'Thời gian chạy tới mức đó',efx:'Hiệu ứng',ef1:'1 · Gợn sóng',ef2:'2 · Beat',hbp:'Chu kỳ beat',tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'chọn đội',spc:'space để chơi',tEcho:'FX',tHist:'Trận trước',tPal:'Bảng màu',esp:'Khoảng cách vòng',zf:'Zoom blur',zfa:'Cường độ',zfc:'Tâm nét',wtone:'Làm tối nền trắng',zfv:'Điểm tụ',zfo:'Độ mờ',spp:'space để dừng',endm:'kết thúc trận',newm:'trận mới',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · tên thật CLB',caps:'Khẩu hiệu · tên fake · kick-off · VAR · tỉ số lịch sử',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · ngày giờ · tab · bảng VAR này · tiêu đề + ngày lịch sử',fam:'Typeface',wt:'Độ đậm',sz:'Kích thước',ls:'Giãn chữ',sh:'Xoay (tilt)',hlh:'Bố cục header',hlr:'Ngang trái – phải',hlc:'Dọc trên – dưới',green:'Green',pink:'Pink',slt:'Dòng khẩu hiệu',tline:'Độ cao vạch T',ec:'Màu loang',pace:'Tốc độ',h6:'Số trận hiển thị',h7:'Giới hạn thời gian trận (phút)',h8:'Lịch sử tỉ số',shuf:'shuffle',eTheme:'Màu theme',eSec:'Màu phụ',m3:'3 trận',m5:'5 trận',clr:'xoá lịch sử',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLB',nations:'QUỐC GIA',same:'Hai bên không thể chọn cùng một đội',needScore:'Nhập tỉ số hai bên',saved:'Đã lưu tỉ số',none:'chưa có trận nào',rand:'Random (mỗi CLB một font)',gHand:'Script',gSans:'Grotesk',mode:'Chế độ',themeSec:'Màu theme · màu phụ',usedBy:'Mục dùng màu nào',light:'White',dark:'Black',rBg:'Nền',rName:'Màu pagename',rSub:'Màu khẩu hiệu',save:'Lưu làm mặc định',reset:'Reset',theme:'Theme',sec:'Phụ'}
 };
 let LANG = store.get('ef9_lang', 'en'); if (!T[LANG]) LANG = 'en';
 const t = k => T[LANG][k];
@@ -818,7 +818,7 @@ class Side {
 const SD = {L: new Side('L'), R: new Side('R')};
 const team = {L: null, R: null};
 let ECHO = {w:0, h:0, cx:0, cy:0, r0:0, rmax:0};
-const ROT = {on:false, t0:0, raf:0, a:[]}, HB = {k:1, t0:0, raf:0};
+const ROT = {on:false, t0:0, raf:0, a:[]}, HB = {k:1, t0:0, raf:0, c:-1, idx:-1};
 
 function layout(){
   const M = $('main').clientHeight, vw = innerWidth, mob = MOB(), rowH = mob ? 44 : 56, histMax = .25 * M + 26;
@@ -994,7 +994,7 @@ function zsDraw(cv){      // radial zoom / spin blur of the crest (like imageonl
     const N = 896, w = N / 3.4, c = cv.getContext('2d'); cv.width = cv.height = N; c.clearRect(0, 0, N, N);
     const f = Math.min(w / im.naturalWidth, w / im.naturalHeight), dw = im.naturalWidth * f, dh = im.naturalHeight * f;
     const draw = (g, sc, rot) => { g.save(); g.translate(N / 2, N / 2); g.rotate(rot); g.scale(sc, sc); g.drawImage(im, -dw / 2, -dh / 2, dw, dh); g.restore() };
-    const a = (window.ZA == null ? S.zf.a : window.ZA) / 100, M = 36;
+    const a = (window.ZA == null ? S.zf.a : window.ZA) / 100, M = ZAF && ZAanim ? 20 : 36;
     let cum = 0; const ex = S.zf.v / 22;
     for (let i = 0; i < M && a > 0; i++){ const k = i / (M - 1), wt = Math.pow(1 - k * .97, ex); cum += wt; c.globalAlpha = wt / cum; draw(c, 1 + a * 1.5 * k, 0) }
     cv.style.opacity = Math.min(1, S.zf.o / 100 * (1 + .45 * a));
@@ -1018,12 +1018,12 @@ function bigFill(el, tm){
   el.addEventListener('pointerleave', () => { const t = el.firstElementChild; if (t){ t.style.setProperty('--rx', 0); t.style.setProperty('--ry', 0) } });
 });
 /* zoom-blur amount of the crests: idle = slider value (35), runs up to 100 when the match starts (5 s), and back when it ends / is cancelled */
-window.ZA = null; let ZAF = 0, ZAP = '';
+window.ZA = null; let ZAF = 0, ZAP = '', ZAanim = false;
 function zaPhase(ph){
   const on = ph === 'match'; if ((ph === ZAP) || (on === (ZAP === 'match'))){ ZAP = ph; return }
   ZAP = ph; const from = window.ZA == null ? S.zf.a : window.ZA, to = on ? S.zf.m : S.zf.a, t0 = performance.now(), D = S.zf.d * 1000; cancelAnimationFrame(ZAF); let last = 0;
   const f = now => { const k = Math.min(1, (now - t0) / D), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2; window.ZA = from + (to - from) * e;
-    if (now - last > 60 || k === 1){ last = now; zsAll() } if (k < 1) ZAF = requestAnimationFrame(f); else if (!on) window.ZA = null };
+    if (now - last > 60 || k === 1){ last = now; zsAll() } if (k < 1){ ZAanim = true; ZAF = requestAnimationFrame(f) } else { ZAanim = false; ZAF = 0; if (!on) window.ZA = null; zsAll() } };
   ZAF = requestAnimationFrame(f);
 }
 function renderPitch(){
@@ -1045,7 +1045,7 @@ function buildEcho(lx, rw, cw, cy){
   const lit = $('lit'); lit.setAttribute('cx', cx); lit.setAttribute('cy', cy);
   ECHO = {w, h, cx, cy, rc, rs, args:[lx, rw, cw, cy]};
   $('echoW').style.webkitMaskImage = 'none'; $('echoW').style.maskImage = 'none';
-  ECHO.circ = [...svg.children]; ECHO.da = [];
+  ECHO.circ = [...svg.children]; ECHO.da = []; ECHO.nb = Math.floor(L / Math.max(8, S.esEff || S.es)) + 1;
   if (!ROT.raf) ECHO.circ.forEach((c, i) => rotSet(i, ROT.on ? 90 : 0));
   echoGaps();
   echoDraw();
@@ -1069,13 +1069,16 @@ function rotSync(){
 function hbOn(){ return S.fx2 === 2 && CLK.run && !CLK.ended && S.phase === 'match' }
 function hbFrame(now){
   HB.raf = 0; if (!hbOn()){ if (HB.k !== 1){ HB.k = 1; ECHO.args && buildEcho(...ECHO.args) } return }
-  const ph = ((now - HB.t0) / 1000 / Math.max(.5, S.hb)) % 1, g = (c, w) => Math.exp(-Math.pow((ph - c) / w, 2)), pulse = Math.max(g(.12, .055), .75 * g(.3, .055)), k = 1 - .78 * pulse;
-  if (Math.abs(k - HB.k) > .008){ HB.k = k; ECHO.args && buildEcho(...ECHO.args) }
+  // one beat = rings zoom in once (fast), then ease back out; when it has relaxed the lit ring steps one ring outward (ripple, but one step per beat)
+  const per = Math.max(.5, S.hb) * 1000, el = now - HB.t0, c = Math.floor(el / per), ph = (el % per) / per, ez = x => x * x * (3 - 2 * x),
+    k = ph < .22 ? 1 - .7 * ez(ph / .22) : 1 - .7 * (1 - ez((ph - .22) / .78));
+  if (c !== HB.c){ HB.c = c; HB.idx = c % Math.max(1, ECHO.nb || 1); echoDraw() }
+  if (Math.abs(k - HB.k) > .006){ HB.k = k; ECHO.args && buildEcho(...ECHO.args) }
   HB.raf = requestAnimationFrame(hbFrame);
 }
 function fxSync(){
   rotSync();
-  if (hbOn() && !HB.raf){ HB.t0 = performance.now(); HB.raf = requestAnimationFrame(hbFrame) }
+  if (hbOn() && !HB.raf){ HB.t0 = performance.now(); HB.c = -1; HB.idx = 0; HB.raf = requestAnimationFrame(hbFrame) }
   else if (!hbOn() && !HB.raf && HB.k !== 1){ HB.k = 1; ECHO.args && buildEcho(...ECHO.args) }
 }
 setInterval(fxSync, 160);
@@ -1121,7 +1124,7 @@ setInterval(() => { if (!document.hidden) echoGaps() }, 140);
 const EA = {p:0, raf:0, last:0};
 function echoDraw(){
   const c = $('lit'), n = ECHO.rs ? ECHO.rs.length : 0; if (!c || !n) return;
-  const i = Math.max(0, Math.min(n - 1, Math.floor(EA.p * n)));
+  const i = S.fx2 === 2 && HB.idx >= 0 ? Math.min(n - 1, HB.idx) : Math.max(0, Math.min(n - 1, Math.floor(EA.p * n)));
   c.setAttribute('r', ECHO.rs[i].toFixed(1));
   c.style.opacity = Math.max(.15, 1 - .85 * i / n).toFixed(3); c.style.stroke = S.ec === 'sec' ? 'var(--sec)' : 'var(--theme)';
 }
@@ -1143,9 +1146,9 @@ function esShrink(){      // ring spacing closes in from the setting down to 30 
 }
 function echoSync(){
   esShrink();
-  const show = CLK.started && CLK.left > 0 && !CLK.ended && S.fx2 === 1;
+  const show = CLK.started && CLK.left > 0 && !CLK.ended;
   $('echoLit').style.display = show ? 'block' : 'none';
-  if (CLK.run){ if (!EA.raf){ EA.last = performance.now(); EA.raf = requestAnimationFrame(echoFrame) } }
+  if (CLK.run && S.fx2 === 1){ if (!EA.raf){ EA.last = performance.now(); EA.raf = requestAnimationFrame(echoFrame) } }
   else if (EA.raf){ cancelAnimationFrame(EA.raf); EA.raf = 0 }
   if (!show){ EA.p = 0; echoDraw() }
 }
@@ -1301,7 +1304,7 @@ function syncFont0(){ const f = S.fx[S.tgt]; $('wtv').textContent = f.w; $('szv'
 $('shuf').onclick = () => { S.seed = Math.floor(Math.random() * 1e6); store.set('ef5_seed', S.seed); refreshFonts() };
 $('subin').oninput = e => { S.sub = e.target.value.trim() || 'Champion of NTF'; store.set('ef5_sub', S.sub); applySub() };
 $('tlr').oninput = e => { S.tl = +e.target.value; store.set('ef10_tl', S.tl); $('tlv').textContent = S.tl + '%'; fit() };
-for (const [id, key] of [['zfa', 'a'], ['zfc', 'c'], ['zfv', 'v'], ['zfo', 'o'], ['zfm', 'm'], ['zfd', 'd']]) $(id).oninput = e => { S.zf[key] = +e.target.value; $(id + 'v').textContent = S.zf[key] + (key === 'd' ? ' s' : ''); store.set('ef20_zf', S.zf); zsAll() };
+for (const [id, key] of [['zfa', 'a'], ['zfc', 'c'], ['zfv', 'v'], ['zfo', 'o'], ['zfm', 'm'], ['zfd', 'd']]) $(id).oninput = e => { S.zf[key] = +e.target.value; if (ZAP === 'match' && key === 'm'){ cancelAnimationFrame(ZAF); ZAF = 0; ZAanim = false; window.ZA = S.zf.m } if (ZAP !== 'match' && key === 'a') window.ZA = null; $(id + 'v').textContent = S.zf[key] + (key === 'd' ? ' s' : ''); store.set('ef20_zf', S.zf); zsAll() };
 $('ecr').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.ec = b.dataset.v; store.set('ef10_ec', S.ec); pillSet('ecr', S.ec); echoDraw() };
 $('esp').oninput = e => { S.es = S.esEff = +e.target.value; store.set('ef14_es', S.es); $('espv').textContent = S.es + ' px'; if (ECHO.args) buildEcho(...ECHO.args) };
 $('efr').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.fx2 = +b.dataset.v; store.set('ef21_efx', S.fx2); pillSet('efr', S.fx2); echoSync(); fxSync() };
