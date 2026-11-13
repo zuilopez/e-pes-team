@@ -100,5 +100,11 @@
   "label": "v.1.3l",
   "date": "13/11/2026",
   "note": "Footer không còn nền sáng hơn đáy sân khi vào trận: lớp vignette không phủ xuống footer nữa (trước đây tạo đường biên mờ ngang)"
+ },
+ {
+  "id": "v1.3m",
+  "label": "v.1.3m",
+  "date": "13/11/2026",
+  "note": "Khung chữ T thành chữ H nằm ngang (thêm vạch ngang dưới khung); vào trận 2 vạch ngang co trước (5s), rồi vạch giữa sân co từ 2 đầu vào tâm, tổng 15s"
  }
 ]
