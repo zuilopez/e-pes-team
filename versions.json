@@ -82,5 +82,11 @@
   "label": "v.1.3i",
   "date": "13/11/2026",
   "note": "Số đội thu nhỏ ở góc trên phải tên (thêm cho Club/Nation), icon Club/Nation x2, trắng xuống cuối bảng màu, since 4/5, PM luôn hiện 3 trận, làm mờ khi vào trận x2"
+ },
+ {
+  "id": "v1.3j",
+  "label": "v.1.3j",
+  "date": "13/11/2026",
+  "note": "Số đội căn giữa dưới tên giải (nhỏ 2/3); xoay cung chọn đội tự hiện logo ở 2 vị trí (click chỉ để chọn); zoom blur logo chạy 35 → 100 khi vào trận và ngược lại"
  }
 ]

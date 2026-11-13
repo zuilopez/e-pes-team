@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3i</title>
+<title>e-pes-team v.1.3j</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -193,7 +193,7 @@ body[data-ph=match] .r:not(.tm.sel),body[data-ph=match] .arw,body[data-ph=ended]
 .r.tm.hs .sy{margin-bottom:calc(var(--fs)*.55)}
 .r.root .sy,.shr .sy{color:var(--theme)}
 .r.grp .sy:not(:has(.gb)),.r.root .sy{height:calc(var(--ih)*2)}
-.re .cn{position:absolute;right:0;top:0;transform:translate(105%,-70%);font-style:normal;color:var(--sec);font-size:.68em;line-height:1;font-weight:var(--wS);opacity:.95;pointer-events:none;letter-spacing:.02em}
+.re .cn{position:absolute;left:50%;top:100%;transform:translate(-50%,.2em);font-style:normal;color:var(--sec);font-size:.45em;line-height:1;font-weight:var(--wS);opacity:.95;pointer-events:none;letter-spacing:.02em}
 .sy{display:block;height:var(--ih);line-height:0;flex:none;pointer-events:none}
 .sy svg{height:100%;width:auto;display:block;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
 .sy svg.ic{stroke-width:3}.sy svg.gb{stroke-width:4}
@@ -416,7 +416,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3i</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3j</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -428,7 +428,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3i';
+const CUR = 'v1.3j';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -443,7 +443,8 @@ const VERSIONS = [
  {id:'v1.3f',label:'v.1.3f',date:'13/11/2026',note:'Ký hiệu CLB/QG theo màu theme; layout trắng đổi chỗ màu chính và phụ'},
  {id:'v1.3g',label:'v.1.3g',date:'13/11/2026',note:'QG hiện quốc kỳ (bỏ logo liên đoàn), bỏ logo trên sao; giao diện xanh: since trắng; giao diện hồng: slogan xanh'},
  {id:'v1.3h',label:'v.1.3h',date:'13/11/2026',note:'Ngưỡng ≥ 3 sao; thêm 22 CLB (Süper Lig, Eredivisie, Bồ Đào Nha, Brasil, Argentina, AFC...) và 12 QG; hiện số đội dưới tên giải/khu vực; icon giải CLB x2'},
- {id:'v1.3i',label:'v.1.3i',date:'13/11/2026',note:'Số đội thu nhỏ ở góc trên phải tên (thêm cho Club/Nation), icon Club/Nation x2, trắng xuống cuối bảng màu, since 4/5, PM luôn hiện 3 trận, làm mờ khi vào trận x2'}
+ {id:'v1.3i',label:'v.1.3i',date:'13/11/2026',note:'Số đội thu nhỏ ở góc trên phải tên (thêm cho Club/Nation), icon Club/Nation x2, trắng xuống cuối bảng màu, since 4/5, PM luôn hiện 3 trận, làm mờ khi vào trận x2'},
+ {id:'v1.3j',label:'v.1.3j',date:'13/11/2026',note:'Số đội căn giữa dưới tên giải (nhỏ 2/3); xoay cung chọn đội tự hiện logo ở 2 vị trí (click chỉ để chọn); zoom blur logo chạy 35 → 100 khi vào trận và ngược lại'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
@@ -484,7 +485,7 @@ const DEMO = [['Borussia Dortmund', 'Real Betis', 2, 1, 0], ['RC Lens', 'Como 19
 const S = {
   fx: {n:Object.assign({}, FXD.n, fx0.n), s:Object.assign({}, FXD.s, fx0.s), c:Object.assign({}, FXD.c, fx0.c), d:Object.assign({}, FXD.d, fx0.d)}, tgt:'n',
   seed: store.get('ef5_seed', 1), sub: store.get('ef5_sub', 'Champion of NTF'),
-  hist: store.get('ef5_hist', []), zf: Object.assign({t:'zoom', a:50, c:55, v:60, o:85}, store.get('ef20_zf', {})), wd: 0, hmax: 3, mins: store.get('ef9_mins', 10),
+  hist: store.get('ef5_hist', []), zf: Object.assign({t:'zoom', a:35, c:55, v:60, o:85}, store.get('ef20_zf', {})), wd: 0, hmax: 3, mins: store.get('ef9_mins', 10),
   ec: store.get('ef10_ec', 'theme'), es: store.get('ef14_es', 210), pace: store.get('ef11_pace', 3), tl: store.get('ef10_tl', 86), nl: store.get('ef18_nl', 2),
   hl: store.get('ef13_hl', 'row'), phase: 'idle', sa: '', sb: ''
 };
@@ -696,13 +697,17 @@ class Col {
     this.cur = this.target = (this.k === 0 && this.sd.depth === 0 && this.hi < 0) ? (this.items.length - 1) / 2 : Math.max(0, Math.min(this.items.length - 1, this.hi >= 0 ? this.hi : Math.round(this.target || 0)));
     this.place();
   }
+  preview_(){      // rotating the team arc: the crest under the centre shows at once (big + centre); a click only selects (frame)
+    if (this.k !== 2 || this.sd.depth !== 2 || !this.items.length || this.items[0].k !== 'team') return;
+    const i = Math.round(this.cur); if (i === this._pv) return; this._pv = i; const tm = this.items[i] && this.items[i].t; if (tm) this.sd.preview(tm);
+  }
   setHi(i){ this.hi = i; this.nodes.forEach((n, j) => n.classList.toggle('sel', j === i)) }
   go(i){ this.target = Math.max(0, Math.min(this.items.length - 1, i)); this.kick() }
   kick(){ if (!this.raf) this.raf = requestAnimationFrame(() => this.tick()) }
   tick(){
     this.raf = 0; const d = this.target - this.cur;
     if (Math.abs(d) < .003){ this.cur = this.target; this.place(); return }
-    this.cur += d * .22; this.place(); this.raf = requestAnimationFrame(() => this.tick());
+    this.cur += d * .22; this.place(); this.preview_(); this.raf = requestAnimationFrame(() => this.tick());
   }
   place(){
     const g = this.geo, H = this.list_.clientHeight, ROW = g.ROW; if (!H) return;
@@ -730,6 +735,7 @@ class Side {
     a.onclick = () => { if (this.depth > 0){ this.depth--; this.layoutCols() } };
   }
   modeItems(){ return [{k:'mode', m:'c', label:t('clubs'), n:ALL.c.length}, {k:'mode', m:'n', label:t('nations'), n:ALL.n.length}] }
+  preview(tm){ const sd = this.sd, o = team[sd === 'L' ? 'R' : 'L']; if (!tm || o === tm || team[sd] === tm || S.phase !== 'idle') return; team[sd] = tm; renderPitch() }
   groupItems(){ return MODES[this.mode].groups.map((g, i) => { const c = CONT[g.g] || ''; return {k:'group', gi:i, label:c ? CNAME[LANG][c] : g.g, sym:g.lgl || g.lg || '', cont:c, n:g.t.length} }) }
   teamItems(){ return MODES[this.mode].groups[this.gi].t.map(tm => ({k:'team', t:tm})) }
   rebuild(){
@@ -949,7 +955,7 @@ function zsDraw(cv){      // radial zoom / spin blur of the crest (like imageonl
     const N = 896, w = N / 3.4, c = cv.getContext('2d'); cv.width = cv.height = N; c.clearRect(0, 0, N, N);
     const f = Math.min(w / im.naturalWidth, w / im.naturalHeight), dw = im.naturalWidth * f, dh = im.naturalHeight * f;
     const draw = (g, sc, rot) => { g.save(); g.translate(N / 2, N / 2); g.rotate(rot); g.scale(sc, sc); g.drawImage(im, -dw / 2, -dh / 2, dw, dh); g.restore() };
-    const a = S.zf.a / 100, M = 36;
+    const a = (window.ZA == null ? S.zf.a : window.ZA) / 100, M = 36;
     let cum = 0; const ex = S.zf.v / 22;
     for (let i = 0; i < M && a > 0; i++){ const k = i / (M - 1), wt = Math.pow(1 - k * .97, ex); cum += wt; c.globalAlpha = wt / cum; draw(c, 1 + a * 1.5 * k, 0) }
     cv.style.opacity = S.zf.o / 100;
@@ -972,11 +978,20 @@ function bigFill(el, tm){
     t.style.setProperty('--ry', ((x - .5) * 2).toFixed(3)); t.style.setProperty('--rx', ((y - .5) * 2).toFixed(3)); t.style.setProperty('--mx', (x * 100).toFixed(1) + '%'); t.style.setProperty('--my', (y * 100).toFixed(1) + '%') });
   el.addEventListener('pointerleave', () => { const t = el.firstElementChild; if (t){ t.style.setProperty('--rx', 0); t.style.setProperty('--ry', 0) } });
 });
+/* zoom-blur amount of the crests: idle = slider value (35), runs up to 100 when the match starts (5 s), and back when it ends / is cancelled */
+window.ZA = null; let ZAF = 0, ZAP = '';
+function zaPhase(ph){
+  const on = ph === 'match'; if ((ph === ZAP) || (on === (ZAP === 'match'))){ ZAP = ph; return }
+  ZAP = ph; const from = window.ZA == null ? S.zf.a : window.ZA, to = on ? 100 : S.zf.a, t0 = performance.now(), D = 5000; cancelAnimationFrame(ZAF); let last = 0;
+  const f = now => { const k = Math.min(1, (now - t0) / D), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2; window.ZA = from + (to - from) * e;
+    if (now - last > 60 || k === 1){ last = now; zsAll() } if (k < 1) ZAF = requestAnimationFrame(f); else if (!on) window.ZA = null };
+  ZAF = requestAnimationFrame(f);
+}
 function renderPitch(){
   $('pa').innerHTML = sideHtml(team.L, 'sa');
   $('pb').innerHTML = sideHtml(team.R, 'sb');
   $('ko').disabled = !(team.L && team.R);
-  document.body.dataset.ph = S.phase; document.body.dataset.face = S.phase === 'match' ? 'clock' : (team.L && team.R ? 'ko' : 'pick');
+  zaPhase(S.phase); document.body.dataset.ph = S.phase; document.body.dataset.face = S.phase === 'match' ? 'clock' : (team.L && team.R ? 'ko' : 'pick');
   bigFill($('bgL'), team.L); bigFill($('bgR'), team.R);
   document.body.dataset.sc = '';
 }
