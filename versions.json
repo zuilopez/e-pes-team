@@ -124,5 +124,11 @@
   "label": "v.1.3p",
   "date": "13/11/2026",
   "note": "Tên đội giảm 20%, cung logo trong dịch ra 10%; vạch echo đứt một khoảng khi gặp chữ/logo/PM (khoảng đứt = vật + 1/4 chiều rộng mỗi bên)"
+ },
+ {
+  "id": "v1.3q",
+  "label": "v.1.3q",
+  "date": "13/11/2026",
+  "note": "Thêm chọn hiệu ứng ở tab FX: 1 gợn sóng (như cũ), 2 nhịp tim (echo dồn vào tâm rồi giãn, chu kỳ chỉnh bằng thanh kéo), 3 sóng chấm (cung đứt ra co về 4 hướng, vòng chấm bi sáng dần lan từ tâm)"
  }
 ]

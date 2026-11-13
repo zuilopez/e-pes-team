@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3p</title>
+<title>e-pes-team v.1.3q</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -73,6 +73,7 @@ main::before{top:0}main::after{top:min(calc(var(--cy)*2),calc(100% - 1.5px))}
 body[data-ph=match] #echoW{clip-path:inset(calc(var(--hh,100px)*-1) 0 0 0)}
 #echoSvg,#echoLit{position:absolute;inset:0;width:100%;height:100%;fill:none;overflow:visible}
 #echoSvg{stroke:var(--ink);stroke-width:1.5}
+#echoDots{position:absolute;inset:0;width:100%;height:100%;fill:none;overflow:visible;stroke:var(--theme);stroke-width:3.2;stroke-linecap:round}
 #echoLit circle{stroke-width:3;fill:none}
 .stem{position:absolute;left:50%;top:0;height:min(calc(var(--cy)*2),100%);width:1.5px;margin-left:-.75px;background:var(--ink);opacity:.35}
 .ring{position:absolute;left:50%;top:var(--cy);width:calc(45cqw + 3px);height:calc(45cqw + 3px);transform:translate(-50%,-50%);border-radius:50%;background:var(--bg);border:1.5px solid color-mix(in srgb,var(--ink) 42%,transparent)}
@@ -347,7 +348,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </header>
 <main id="main">
   <div class="stage" id="stage">
-    <div id="echoW"><svg id="echoSvg" aria-hidden="true"></svg><svg id="echoLit" aria-hidden="true"><circle id="lit" cx="0" cy="0" r="0"/></svg></div>
+    <div id="echoW"><svg id="echoSvg" aria-hidden="true"></svg><svg id="echoDots" aria-hidden="true"></svg><svg id="echoLit" aria-hidden="true"><circle id="lit" cx="0" cy="0" r="0"/></svg></div>
     <div class="bgl" id="bgL"></div><div class="bgl" id="bgR"></div>
     <div id="mv"></div>
     <div id="vig"></div>
@@ -391,6 +392,10 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
   <div class="vp" data-s="e"><div class="vh" data-i="tEcho">FX</div><div class="pbody"><section data-s="e">
       <h4 data-i="ec">Ripple colour</h4>
       <div class="row" id="ecr"><button class="pill" data-v="theme" data-i="eTheme">Theme colour</button><button class="pill" data-v="sec" data-i="eSec">Secondary colour</button></div>
+      <h4 data-i="efx">Effect</h4>
+      <div class="row" id="efr"><button class="pill" data-v="1" data-i="ef1">1 · Ripple</button><button class="pill" data-v="2" data-i="ef2">2 · Heartbeat</button><button class="pill" data-v="3" data-i="ef3">3 · Dot waves</button></div>
+      <h4><span data-i="hbp">Heartbeat period</span><b id="hbv"></b></h4>
+      <input type="range" id="hbr" min="1" max="10" step=".5">
       <h4><span data-i="pace">Pace</span><b id="pcv"></b></h4>
       <input type="range" id="pace" min="1" max="60" step="1">
       <h4><span data-i="esp">Ring spacing</span><b id="espv"></b></h4>
@@ -419,7 +424,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3p</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3q</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -431,7 +436,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3p';
+const CUR = 'v1.3q';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -453,7 +458,8 @@ const VERSIONS = [
  {id:'v1.3m',label:'v.1.3m',date:'13/11/2026',note:'Khung chữ T thành chữ H nằm ngang (thêm vạch ngang dưới khung); vào trận 2 vạch ngang co trước (5s), rồi vạch giữa sân co từ 2 đầu vào tâm, tổng 15s'},
  {id:'v1.3n',label:'v.1.3n',date:'13/11/2026',note:'Vạch ngang dưới đối xứng vạch trên qua tâm vòng tròn giữa sân (chữ PM hiện thì đè lên vạch)'},
  {id:'v1.3o',label:'v.1.3o',date:'13/11/2026',note:'Vạch giữa sân đối xứng tâm (từ vạch trên tới vạch dưới), 2 vạch ngang + vạch giữa rút vào bằng nhau; vạch dưới/vạch giữa đứt 1 khoảng khi gặp PM (PM là 1 khối), ngoài ra liền nét'},
- {id:'v1.3p',label:'v.1.3p',date:'13/11/2026',note:'Tên đội giảm 20%, cung logo trong dịch ra 10%; vạch echo đứt một khoảng khi gặp chữ/logo/PM (khoảng đứt = vật + 1/4 chiều rộng mỗi bên)'}
+ {id:'v1.3p',label:'v.1.3p',date:'13/11/2026',note:'Tên đội giảm 20%, cung logo trong dịch ra 10%; vạch echo đứt một khoảng khi gặp chữ/logo/PM (khoảng đứt = vật + 1/4 chiều rộng mỗi bên)'},
+ {id:'v1.3q',label:'v.1.3q',date:'13/11/2026',note:'Thêm chọn hiệu ứng ở tab FX: 1 gợn sóng (như cũ), 2 nhịp tim (echo dồn vào tâm rồi giãn, chu kỳ chỉnh bằng thanh kéo), 3 sóng chấm (cung đứt ra co về 4 hướng, vòng chấm bi sáng dần lan từ tâm)'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
@@ -480,8 +486,8 @@ function eff(){      // accent colours must never equal the background
 const saved = store.get('ef8_def', null);
 const P = {white:(saved && saved.white) || FACT.white, black:(saved && saved.black) || FACT.black, theme:(saved && saved.theme) || FACT.theme, sec:(saved && saved.sec) || FACT.sec, roles:Object.assign({}, (saved && saved.roles) || FACT.roles)};
 const T = {
- en:{tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'pick teams',spc:'space to play',tEcho:'FX',tHist:'Previous matches',tPal:'Palette',esp:'Ring spacing',zf:'Zoom blur',zfa:'Amount',zfc:'Sharp centre',wtone:'Darken white',zfv:'Convergence',zfo:'Opacity',spp:'space to pause',endm:'end match',newm:'new match',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · real club names',caps:'Slogan · in-game names · kick-off · VAR · history score',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · date/time · tabs · this panel · history title + date',fam:'Typeface',wt:'Weight',sz:'Size',ls:'Letter spacing',sh:'Tilt',hlh:'Header layout',hlr:'Side by side',hlc:'Stacked',green:'Green',pink:'Pink',slt:'Slogan text',tline:'T-line height',ec:'Ripple colour',pace:'Pace',h6:'Matches shown',h7:'Match time limit (minutes)',h8:'Score history',shuf:'shuffle',eTheme:'Theme colour',eSec:'Secondary colour',m3:'3 matches',m5:'5 matches',clr:'clear history',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLUBS',nations:'NATIONS',same:'Both sides cannot pick the same team',needScore:'Enter both scores',saved:'Score saved',none:'no matches yet',rand:'Random (one font per club)',gHand:'Script',gSans:'Grotesk',mode:'Mode',themeSec:'Theme · secondary colour',usedBy:'Colour used by',light:'White',dark:'Black',rBg:'Background',rName:'Page-name colour',rSub:'Slogan colour',save:'Save as default',reset:'Reset',theme:'Theme',sec:'Secondary'},
- vi:{tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'chọn đội',spc:'space để chơi',tEcho:'FX',tHist:'Trận trước',tPal:'Bảng màu',esp:'Khoảng cách vòng',zf:'Zoom blur',zfa:'Cường độ',zfc:'Tâm nét',wtone:'Làm tối nền trắng',zfv:'Điểm tụ',zfo:'Độ mờ',spp:'space để dừng',endm:'kết thúc trận',newm:'trận mới',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · tên thật CLB',caps:'Khẩu hiệu · tên fake · kick-off · VAR · tỉ số lịch sử',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · ngày giờ · tab · bảng VAR này · tiêu đề + ngày lịch sử',fam:'Typeface',wt:'Độ đậm',sz:'Kích thước',ls:'Giãn chữ',sh:'Xoay (tilt)',hlh:'Bố cục header',hlr:'Ngang trái – phải',hlc:'Dọc trên – dưới',green:'Green',pink:'Pink',slt:'Dòng khẩu hiệu',tline:'Độ cao vạch T',ec:'Màu loang',pace:'Tốc độ',h6:'Số trận hiển thị',h7:'Giới hạn thời gian trận (phút)',h8:'Lịch sử tỉ số',shuf:'shuffle',eTheme:'Màu theme',eSec:'Màu phụ',m3:'3 trận',m5:'5 trận',clr:'xoá lịch sử',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLB',nations:'QUỐC GIA',same:'Hai bên không thể chọn cùng một đội',needScore:'Nhập tỉ số hai bên',saved:'Đã lưu tỉ số',none:'chưa có trận nào',rand:'Random (mỗi CLB một font)',gHand:'Script',gSans:'Grotesk',mode:'Chế độ',themeSec:'Màu theme · màu phụ',usedBy:'Mục dùng màu nào',light:'White',dark:'Black',rBg:'Nền',rName:'Màu pagename',rSub:'Màu khẩu hiệu',save:'Lưu làm mặc định',reset:'Reset',theme:'Theme',sec:'Phụ'}
+ en:{efx:'Effect',ef1:'1 · Ripple',ef2:'2 · Heartbeat',ef3:'3 · Dot waves',hbp:'Heartbeat period',tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'pick teams',spc:'space to play',tEcho:'FX',tHist:'Previous matches',tPal:'Palette',esp:'Ring spacing',zf:'Zoom blur',zfa:'Amount',zfc:'Sharp centre',wtone:'Darken white',zfv:'Convergence',zfo:'Opacity',spp:'space to pause',endm:'end match',newm:'new match',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · real club names',caps:'Slogan · in-game names · kick-off · VAR · history score',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · date/time · tabs · this panel · history title + date',fam:'Typeface',wt:'Weight',sz:'Size',ls:'Letter spacing',sh:'Tilt',hlh:'Header layout',hlr:'Side by side',hlc:'Stacked',green:'Green',pink:'Pink',slt:'Slogan text',tline:'T-line height',ec:'Ripple colour',pace:'Pace',h6:'Matches shown',h7:'Match time limit (minutes)',h8:'Score history',shuf:'shuffle',eTheme:'Theme colour',eSec:'Secondary colour',m3:'3 matches',m5:'5 matches',clr:'clear history',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLUBS',nations:'NATIONS',same:'Both sides cannot pick the same team',needScore:'Enter both scores',saved:'Score saved',none:'no matches yet',rand:'Random (one font per club)',gHand:'Script',gSans:'Grotesk',mode:'Mode',themeSec:'Theme · secondary colour',usedBy:'Colour used by',light:'White',dark:'Black',rBg:'Background',rName:'Page-name colour',rSub:'Slogan colour',save:'Save as default',reset:'Reset',theme:'Theme',sec:'Secondary'},
+ vi:{efx:'Hiệu ứng',ef1:'1 · Gợn sóng',ef2:'2 · Nhịp tim',ef3:'3 · Sóng chấm',hbp:'Chu kỳ nhịp tim',tFont:'Font',nlh:'Long names',n1:'1 line',n2:'2 lines',hint:'chọn đội',spc:'space để chơi',tEcho:'FX',tHist:'Trận trước',tPal:'Bảng màu',esp:'Khoảng cách vòng',zf:'Zoom blur',zfa:'Cường độ',zfc:'Tâm nét',wtone:'Làm tối nền trắng',zfv:'Điểm tụ',zfo:'Độ mờ',spp:'space để dừng',endm:'kết thúc trận',newm:'trận mới',pn:'Lv A',sl:'Lv B',lc:'Lv C',ld:'Lv D',capn:'Page name · tên thật CLB',caps:'Khẩu hiệu · tên fake · kick-off · VAR · tỉ số lịch sử',capc:'Since (created date) · Home/Away · match clock',capd:'Random · back · ngày giờ · tab · bảng VAR này · tiêu đề + ngày lịch sử',fam:'Typeface',wt:'Độ đậm',sz:'Kích thước',ls:'Giãn chữ',sh:'Xoay (tilt)',hlh:'Bố cục header',hlr:'Ngang trái – phải',hlc:'Dọc trên – dưới',green:'Green',pink:'Pink',slt:'Dòng khẩu hiệu',tline:'Độ cao vạch T',ec:'Màu loang',pace:'Tốc độ',h6:'Số trận hiển thị',h7:'Giới hạn thời gian trận (phút)',h8:'Lịch sử tỉ số',shuf:'shuffle',eTheme:'Màu theme',eSec:'Màu phụ',m3:'3 trận',m5:'5 trận',clr:'xoá lịch sử',ko:'Kick-off',rnd:'random',back:'back',menu:'menu',clubs:'CLB',nations:'QUỐC GIA',same:'Hai bên không thể chọn cùng một đội',needScore:'Nhập tỉ số hai bên',saved:'Đã lưu tỉ số',none:'chưa có trận nào',rand:'Random (mỗi CLB một font)',gHand:'Script',gSans:'Grotesk',mode:'Chế độ',themeSec:'Màu theme · màu phụ',usedBy:'Mục dùng màu nào',light:'White',dark:'Black',rBg:'Nền',rName:'Màu pagename',rSub:'Màu khẩu hiệu',save:'Lưu làm mặc định',reset:'Reset',theme:'Theme',sec:'Phụ'}
 };
 let LANG = store.get('ef9_lang', 'en'); if (!T[LANG]) LANG = 'en';
 const t = k => T[LANG][k];
@@ -495,7 +501,7 @@ const S = {
   fx: {n:Object.assign({}, FXD.n, fx0.n), s:Object.assign({}, FXD.s, fx0.s), c:Object.assign({}, FXD.c, fx0.c), d:Object.assign({}, FXD.d, fx0.d)}, tgt:'n',
   seed: store.get('ef5_seed', 1), sub: store.get('ef5_sub', 'Champion of NTF'),
   hist: store.get('ef5_hist', []), zf: Object.assign({t:'zoom', a:35, c:55, v:60, o:85}, store.get('ef20_zf', {})), wd: 0, hmax: 3, mins: store.get('ef9_mins', 10),
-  ec: store.get('ef10_ec', 'theme'), es: store.get('ef14_es', 210), pace: store.get('ef11_pace', 3), tl: store.get('ef10_tl', 86), nl: store.get('ef18_nl', 2),
+  fx2: store.get('ef21_efx', 1), hb: store.get('ef21_hb', 2), ec: store.get('ef10_ec', 'theme'), es: store.get('ef14_es', 210), pace: store.get('ef11_pace', 3), tl: store.get('ef10_tl', 86), nl: store.get('ef18_nl', 2),
   hl: store.get('ef13_hl', 'row'), phase: 'idle', sa: '', sb: ''
 };
 if (!Array.isArray(S.hist)) S.hist = [];
@@ -803,6 +809,7 @@ class Side {
 const SD = {L: new Side('L'), R: new Side('R')};
 const team = {L: null, R: null};
 let ECHO = {w:0, h:0, cx:0, cy:0, r0:0, rmax:0};
+const HB = {k:1, t0:0, raf:0}, F3 = {p:0, to:0, raf:0, last:0};
 
 function layout(){
   const M = $('main').clientHeight, vw = innerWidth, mob = MOB(), rowH = mob ? 44 : 56, histMax = .25 * M + 26;
@@ -1022,7 +1029,7 @@ function renderPitch(){
 /* ---------- echo: only from the centre circle, inside the T frame ---------- */
 function buildEcho(lx, rw, cw, cy){
   const st = $('stage'), w = st.clientWidth, h = st.clientHeight; if (!w || !h) return;
-  const cx = w / 2, rc = cw * .225, rmax = Math.hypot(Math.max(cx, w - cx), Math.max(cy + 140, h - cy + 100)), sp = S.esEff || S.es;
+  const cx = w / 2, rc = cw * .225, rmax = Math.hypot(Math.max(cx, w - cx), Math.max(cy + 140, h - cy + 100)), sp = Math.max(8, (S.esEff || S.es) * HB.k);
   const L = Math.max(1, rmax - rc), rs = []; for (let u = 0; u <= L + sp; u += sp) rs.push(rc + u);
   const svg = $('echoSvg'); svg.setAttribute('viewBox', `0 0 ${w} ${h}`); $('echoLit').setAttribute('viewBox', `0 0 ${w} ${h}`);
   svg.innerHTML = rs.map(r => `<circle cx="${cx}" cy="${cy}" r="${r.toFixed(1)}" stroke-opacity="${(.42 * Math.max(.12, 1 - (r - rc) / (rmax - rc + 1) * .9)).toFixed(3)}"/>`).join('');
@@ -1030,9 +1037,46 @@ function buildEcho(lx, rw, cw, cy){
   ECHO = {w, h, cx, cy, rc, rs, args:[lx, rw, cw, cy]};
   $('echoW').style.webkitMaskImage = 'none'; $('echoW').style.maskImage = 'none';
   ECHO.circ = [...svg.children]; ECHO.da = [];
+  { const dv = $('echoDots'); dv.setAttribute('viewBox', `0 0 ${w} ${h}`); dv.innerHTML = rs.map((r, i) => i ? `<circle cx="${cx}" cy="${cy}" r="${r.toFixed(1)}" stroke-dasharray="0.1 9" opacity="0"/>` : '').join(''); ECHO.dots = [...dv.children].filter(Boolean) }
   echoGaps();
   echoDraw();
 }
+
+
+/* ---------- FX 2 heartbeat + FX 3 dot waves ---------- */
+function hbOn(){ return S.fx2 === 2 && CLK.run && !CLK.ended && S.phase === 'match' }
+function hbFrame(now){
+  HB.raf = 0; if (!hbOn()){ if (HB.k !== 1){ HB.k = 1; ECHO.args && buildEcho(...ECHO.args) } return }
+  const ph = ((now - HB.t0) / 1000 / Math.max(.5, S.hb)) % 1, g = (c, w) => Math.exp(-Math.pow((ph - c) / w, 2)), pulse = Math.max(g(.12, .055), .75 * g(.3, .055)), k = 1 - .78 * pulse;
+  if (Math.abs(k - HB.k) > .008){ HB.k = k; ECHO.args && buildEcho(...ECHO.args) }
+  HB.raf = requestAnimationFrame(hbFrame);
+}
+function fxSync(){
+  if (hbOn() && !HB.raf){ HB.t0 = performance.now(); HB.raf = requestAnimationFrame(hbFrame) }
+  else if (!hbOn() && !HB.raf && HB.k !== 1){ HB.k = 1; ECHO.args && buildEcho(...ECHO.args) }
+  F3.to = S.fx2 === 3 && document.body.dataset.ph === 'match' ? 1 : 0;
+  if (F3.p !== F3.to && !F3.raf){ F3.last = performance.now(); F3.raf = requestAnimationFrame(f3Frame) }
+}
+function f3Frame(now){
+  F3.raf = 0; const dt = (now - F3.last) / 1000; F3.last = now;
+  F3.p = F3.to > F3.p ? Math.min(1, F3.p + dt / 6) : Math.max(0, F3.p - dt / 3);
+  f3Apply(); if (F3.p !== F3.to) F3.raf = requestAnimationFrame(f3Frame);
+}
+function f3Apply(){
+  if (!ECHO.circ) return; const p = F3.p, ez = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2, e = ez(Math.min(1, p / .55)), wv = Math.max(0, (p - .3) / .7);
+  const span = Math.max(1, ECHO.rs[ECHO.rs.length - 1] - ECHO.rc);
+  ECHO.circ.forEach((c, i) => {
+    if (!i) return;
+    if (p <= .001){ c.removeAttribute('stroke-dashoffset'); c.style.opacity = ''; return }
+    const r = ECHO.rs[i], C = Math.PI * 2 * r, h = C / 8 * (1 - e) + 3 * e;
+    c.setAttribute('stroke-dasharray', `${(2 * h).toFixed(1)} ${(C / 4 - 2 * h).toFixed(1)}`); c.setAttribute('stroke-dashoffset', h.toFixed(1)); c.style.opacity = (1 - .85 * e).toFixed(3);
+  });
+  (ECHO.dots || []).forEach((c, j) => {
+    const d = (ECHO.rs[j + 1] - ECHO.rc) / span, b = Math.max(0, Math.min(1, (wv * 1.35 - d) / .3));
+    c.setAttribute('opacity', (b * (1 - .6 * d)).toFixed(3));
+  });
+}
+setInterval(fxSync, 160);
 
 /* ---------- echo breaks: a ring is cut where it meets text / a logo (gap = the item + 1/4 of its width each side); PM counts as one block ---------- */
 function echoGaps(){
@@ -1066,7 +1110,7 @@ function echoGaps(){
       seg.sort((u, v) => u[0] - v[0]); const m = []; for (const q of seg){ const l = m[m.length - 1]; if (l && q[0] <= l[1]) l[1] = Math.max(l[1], q[1]); else m.push(q.slice()) }
       const parts = []; let at = 0; for (const [a, b] of m){ parts.push(((a - at) * r).toFixed(1), ((b - a) * r).toFixed(1)); at = b } parts.push(((TAU - at) * r).toFixed(1), '0'); da = parts.join(' ');
     }
-    ECHO.da[i] = da; const c = ECHO.circ[i]; if (c && c.getAttribute('stroke-dasharray') !== (da || null)){ da ? c.setAttribute('stroke-dasharray', da) : c.removeAttribute('stroke-dasharray') }
+    ECHO.da[i] = da; const c = ECHO.circ[i]; if (F3.p > .001 && i > 0) return; if (c && c.getAttribute('stroke-dasharray') !== (da || null)){ da ? c.setAttribute('stroke-dasharray', da) : c.removeAttribute('stroke-dasharray') }
   });
   echoDraw();
 }
@@ -1097,7 +1141,7 @@ function esShrink(){      // ring spacing closes in from the setting down to 30 
 }
 function echoSync(){
   esShrink();
-  const show = CLK.started && CLK.left > 0 && !CLK.ended;
+  const show = CLK.started && CLK.left > 0 && !CLK.ended && S.fx2 === 1;
   $('echoLit').style.display = show ? '' : 'none';
   if (CLK.run){ if (!EA.raf){ EA.last = performance.now(); EA.raf = requestAnimationFrame(echoFrame) } }
   else if (EA.raf){ cancelAnimationFrame(EA.raf); EA.raf = 0 }
@@ -1230,7 +1274,7 @@ function applyLang(){
 }
 $('lg').onclick = () => { LANG = LANG === 'en' ? 'vi' : 'en'; store.set('ef9_lang', LANG); applyLang() };
 $('subin').value = S.sub; $('mins').value = S.mins; $('pace').value = S.pace; $('pcv').textContent = S.pace + ' s'; $('esp').value = S.es; $('espv').textContent = S.es + ' px'; $('tlr').value = S.tl; $('tlv').textContent = S.tl + '%';
-rall(); pillSet('nlt', S.nl); pillSet('ecr', S.ec); $('zfa').value = S.zf.a; $('zfav').textContent = S.zf.a; $('zfc').value = S.zf.c; $('zfcv').textContent = S.zf.c; $('zfv').value = S.zf.v; $('zfvv').textContent = S.zf.v; $('zfo').value = S.zf.o; $('zfov').textContent = S.zf.o; pillSet('hm', S.hmax); pillSet('hlt', S.hl);
+rall(); pillSet('nlt', S.nl); pillSet('ecr', S.ec); pillSet('efr', S.fx2); $('hbr').value = S.hb; $('hbv').textContent = S.hb + ' s'; $('zfa').value = S.zf.a; $('zfav').textContent = S.zf.a; $('zfc').value = S.zf.c; $('zfcv').textContent = S.zf.c; $('zfv').value = S.zf.v; $('zfvv').textContent = S.zf.v; $('zfo').value = S.zf.o; $('zfov').textContent = S.zf.o; pillSet('hm', S.hmax); pillSet('hlt', S.hl);
 $('nlt').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.nl = +b.dataset.v; store.set('ef18_nl', S.nl); pillSet('nlt', S.nl); for (const k of ['L','R']) SD[k].rebuild() };
 $('hlt').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.hl = b.dataset.v; store.set('ef13_hl', S.hl); pillSet('hlt', S.hl); fit() };
 applyLang();
@@ -1258,6 +1302,8 @@ $('tlr').oninput = e => { S.tl = +e.target.value; store.set('ef10_tl', S.tl); $(
 for (const [id, key] of [['zfa', 'a'], ['zfc', 'c'], ['zfv', 'v'], ['zfo', 'o']]) $(id).oninput = e => { S.zf[key] = +e.target.value; $(id + 'v').textContent = S.zf[key]; store.set('ef20_zf', S.zf); zsAll() };
 $('ecr').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.ec = b.dataset.v; store.set('ef10_ec', S.ec); pillSet('ecr', S.ec); echoDraw() };
 $('esp').oninput = e => { S.es = S.esEff = +e.target.value; store.set('ef14_es', S.es); $('espv').textContent = S.es + ' px'; if (ECHO.args) buildEcho(...ECHO.args) };
+$('efr').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.fx2 = +b.dataset.v; store.set('ef21_efx', S.fx2); pillSet('efr', S.fx2); echoSync(); fxSync() };
+$('hbr').oninput = e => { S.hb = +e.target.value; store.set('ef21_hb', S.hb); $('hbv').textContent = S.hb + ' s' };
 $('pace').oninput = e => { S.pace = +e.target.value; store.set('ef11_pace', S.pace); $('pcv').textContent = S.pace + ' s' };
 $('hm').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.hmax = 3; pillSet('hm', S.hmax); renderHist() };
 $('mins').oninput = e => { const v = Math.max(1, Math.min(120, Math.round(+e.target.value) || 10)); S.mins = v; store.set('ef9_mins', v) };
