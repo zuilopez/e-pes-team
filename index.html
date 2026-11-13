@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3e</title>
+<title>e-pes-team v.1.3f</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -191,6 +191,7 @@ body[data-ph=match] .r:not(.tm.sel),body[data-ph=match] .arw,body[data-ph=ended]
 .r.root .re{font-size:calc(var(--fs)*1.2)}
 .r.hs{gap:3px}
 .r.tm.hs .sy{margin-bottom:calc(var(--fs)*.55)}
+.r.root .sy,.shr .sy{color:var(--theme)}
 .sy{display:block;height:var(--ih);line-height:0;flex:none;pointer-events:none}
 .sy svg{height:100%;width:auto;display:block;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
 .sy svg.ic{stroke-width:3}.sy svg.gb{stroke-width:4}
@@ -413,7 +414,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3e</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3f</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -425,7 +426,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3.5;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3e';
+const CUR = 'v1.3f';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -436,7 +437,8 @@ const VERSIONS = [
  {id:'v1.2',label:'v.1.2',date:'10/11/2026',note:'Mobile: cung xoay dọc — HOME 2 hàng phía trên tâm, AWAY 2 hàng phía dưới tâm, hàng gần tâm lớn, hàng xa nhỏ, cuộn ngang'},
  {id:'v1.3c',label:'v.1.3c',date:'11/11/2026',note:'Bảng màu mặc định: nền đen (chữ tên trắng)'},
  {id:'v1.3d',label:'v.1.3d',date:'13/11/2026',note:'Random tối đa 3 cặp liền kề cùng kiểu (CLB–CLB / QG–QG / QG–CLB), bỏ Bayern, chỉ giữ đội ≥ 4 sao (overall TB 11 đá chính, efootballdb), hiện overall + sao trên tên'},
- {id:'v1.3e',label:'v.1.3e',date:'13/11/2026',note:'Ngưỡng lọc ≥ 3.5 sao (thêm lại các đội 3.5–4 sao), bỏ số overall chỉ hiện sao, sửa logo QG chồng lên sao/tên'}
+ {id:'v1.3e',label:'v.1.3e',date:'13/11/2026',note:'Ngưỡng lọc ≥ 3.5 sao (thêm lại các đội 3.5–4 sao), bỏ số overall chỉ hiện sao, sửa logo QG chồng lên sao/tên'},
+ {id:'v1.3f',label:'v.1.3f',date:'13/11/2026',note:'Ký hiệu CLB/QG theo màu theme; layout trắng đổi chỗ màu chính và phụ'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
@@ -455,6 +457,7 @@ const curPre = () => PKEYS[P.roles.bg];
 function usePre(k){ Object.assign(P.roles, PRESETS[k]); applyPal() }
 function eff(){      // accent colours must never equal the background
   const b = P.roles.bg;
+  if (b === 0) return {th:P.sec, sc:P.theme};      // white layout: primary and secondary swap
   if (b === 2) return {th:P.sec, sc:P.sec};
   if (b === 3) return {th:P.theme, sc:WH()};
   return {th:P.theme, sc:P.sec};
@@ -493,7 +496,7 @@ function setVars(){
   const c = cols(), r = document.documentElement.style, bg = c[P.roles.bg], e = eff();
   r.setProperty('--bg', bg); r.setProperty('--ink', lum(bg) > .55 ? P.black : WH());
   r.setProperty('--theme', e.th); r.setProperty('--sec', e.sc); r.setProperty('--sinC', P.roles.bg >= 2 ? P.black : e.sc);
-  r.setProperty('--nameC', c[P.roles.name]); r.setProperty('--subC', c[P.roles.sub]);
+  r.setProperty('--nameC', c[P.roles.name]); r.setProperty('--subC', c[P.roles.bg === 0 && P.roles.sub >= 2 ? 5 - P.roles.sub : P.roles.sub]);
   r.setProperty('--onTheme', lum(e.th) > .55 ? '#0a0a0a' : '#ffffff'); r.setProperty('--onSec', lum(e.sc) > .55 ? '#0a0a0a' : '#ffffff');
   document.body.dataset.dm = lum(bg) > .55 ? 'light' : 'dark';
 }

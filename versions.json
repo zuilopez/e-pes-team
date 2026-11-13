@@ -58,5 +58,11 @@
   "label": "v.1.3e",
   "date": "13/11/2026",
   "note": "Ngưỡng lọc ≥ 3.5 sao (thêm lại các đội 3.5–4 sao), bỏ số overall chỉ hiện sao, sửa logo QG chồng lên sao/tên"
+ },
+ {
+  "id": "v1.3f",
+  "label": "v.1.3f",
+  "date": "13/11/2026",
+  "note": "Ký hiệu CLB/QG theo màu theme; layout trắng đổi chỗ màu chính và phụ"
  }
 ]
