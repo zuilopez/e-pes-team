@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3h</title>
+<title>e-pes-team v.1.3i</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -178,7 +178,7 @@ body:not(.hopen) #hs{max-height:0!important;opacity:0;transform:translateY(46px)
 .r .re{position:relative;font-family:var(--fN);font-weight:var(--wN);text-transform:uppercase;line-height:.86;white-space:nowrap;font-size:calc(var(--fs)*1.1);display:inline-block}
 .r .ig{position:relative;font-style:normal;text-transform:capitalize;color:var(--sec);font-size:calc(var(--fs)*.5);line-height:1.1;margin-top:.14em;white-space:nowrap;font-weight:var(--wS)}
 
-body[data-ph=match] .r:not(.tm.sel),body[data-ph=match] .arw,body[data-ph=ended] .r:not(.tm.sel),body[data-ph=ended] .arw{opacity:.35!important;filter:blur(1.6px);transition:opacity .4s,filter .4s}
+body[data-ph=match] .r:not(.tm.sel),body[data-ph=match] .arw,body[data-ph=ended] .r:not(.tm.sel),body[data-ph=ended] .arw{opacity:.35!important;filter:blur(3.2px);transition:opacity .4s,filter .4s}
 .r.sel .re{background:var(--theme);color:var(--onTheme);padding:.07em .09em .05em;border-radius:3px}
 
 
@@ -192,8 +192,8 @@ body[data-ph=match] .r:not(.tm.sel),body[data-ph=match] .arw,body[data-ph=ended]
 .r.hs{gap:3px}
 .r.tm.hs .sy{margin-bottom:calc(var(--fs)*.55)}
 .r.root .sy,.shr .sy{color:var(--theme)}
-.r.grp .sy:not(:has(.gb)){height:calc(var(--ih)*2)}
-.r .cn,.mi .cn{font-style:normal;color:var(--sec);font-size:calc(var(--fs)*.8);line-height:1;margin-top:.14em;font-weight:var(--wS);opacity:.9}
+.r.grp .sy:not(:has(.gb)),.r.root .sy{height:calc(var(--ih)*2)}
+.re .cn{position:absolute;right:0;top:0;transform:translate(105%,-70%);font-style:normal;color:var(--sec);font-size:.68em;line-height:1;font-weight:var(--wS);opacity:.95;pointer-events:none;letter-spacing:.02em}
 .sy{display:block;height:var(--ih);line-height:0;flex:none;pointer-events:none}
 .sy svg{height:100%;width:auto;display:block;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
 .sy svg.ic{stroke-width:3}.sy svg.gb{stroke-width:4}
@@ -416,7 +416,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3h</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3i</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -428,7 +428,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3h';
+const CUR = 'v1.3i';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -442,7 +442,8 @@ const VERSIONS = [
  {id:'v1.3e',label:'v.1.3e',date:'13/11/2026',note:'Ngưỡng lọc ≥ 3.5 sao (thêm lại các đội 3.5–4 sao), bỏ số overall chỉ hiện sao, sửa logo QG chồng lên sao/tên'},
  {id:'v1.3f',label:'v.1.3f',date:'13/11/2026',note:'Ký hiệu CLB/QG theo màu theme; layout trắng đổi chỗ màu chính và phụ'},
  {id:'v1.3g',label:'v.1.3g',date:'13/11/2026',note:'QG hiện quốc kỳ (bỏ logo liên đoàn), bỏ logo trên sao; giao diện xanh: since trắng; giao diện hồng: slogan xanh'},
- {id:'v1.3h',label:'v.1.3h',date:'13/11/2026',note:'Ngưỡng ≥ 3 sao; thêm 22 CLB (Süper Lig, Eredivisie, Bồ Đào Nha, Brasil, Argentina, AFC...) và 12 QG; hiện số đội dưới tên giải/khu vực; icon giải CLB x2'}
+ {id:'v1.3h',label:'v.1.3h',date:'13/11/2026',note:'Ngưỡng ≥ 3 sao; thêm 22 CLB (Süper Lig, Eredivisie, Bồ Đào Nha, Brasil, Argentina, AFC...) và 12 QG; hiện số đội dưới tên giải/khu vực; icon giải CLB x2'},
+ {id:'v1.3i',label:'v.1.3i',date:'13/11/2026',note:'Số đội thu nhỏ ở góc trên phải tên (thêm cho Club/Nation), icon Club/Nation x2, trắng xuống cuối bảng màu, since 4/5, PM luôn hiện 3 trận, làm mờ khi vào trận x2'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
@@ -483,7 +484,7 @@ const DEMO = [['Borussia Dortmund', 'Real Betis', 2, 1, 0], ['RC Lens', 'Como 19
 const S = {
   fx: {n:Object.assign({}, FXD.n, fx0.n), s:Object.assign({}, FXD.s, fx0.s), c:Object.assign({}, FXD.c, fx0.c), d:Object.assign({}, FXD.d, fx0.d)}, tgt:'n',
   seed: store.get('ef5_seed', 1), sub: store.get('ef5_sub', 'Champion of NTF'),
-  hist: store.get('ef5_hist', []), zf: Object.assign({t:'zoom', a:50, c:55, v:60, o:85}, store.get('ef20_zf', {})), wd: 0, hmax: store.get('ef7_hmax', 3), mins: store.get('ef9_mins', 10),
+  hist: store.get('ef5_hist', []), zf: Object.assign({t:'zoom', a:50, c:55, v:60, o:85}, store.get('ef20_zf', {})), wd: 0, hmax: 3, mins: store.get('ef9_mins', 10),
   ec: store.get('ef10_ec', 'theme'), es: store.get('ef14_es', 210), pace: store.get('ef11_pace', 3), tl: store.get('ef10_tl', 86), nl: store.get('ef18_nl', 2),
   hl: store.get('ef13_hl', 'row'), phase: 'idle', sa: '', sb: ''
 };
@@ -510,12 +511,12 @@ function renderPP(){
   const keep = $('pp').querySelector('.ok') ? $('pp').querySelector('.ok').textContent : '';
   $('pp').innerHTML = `
     <h5>${t('mode')}</h5>
-    <div class="row">${['light', 'dark', 'green', 'pink'].map(k => `<button class="b ${curPre() === k ? 'on' : ''}" data-pre="${k}">${t(k)}</button>`).join('')}</div>
+    <div class="row">${['dark', 'green', 'pink', 'light'].map(k => `<button class="b ${curPre() === k ? 'on' : ''}" data-pre="${k}">${t(k)}</button>`).join('')}</div>
     <h5>${t('themeSec')}</h5>
-    <div class="row lr"><label>${t('light')} <input type="color" id="cw" value="${P.white}"></label><label>${t('dark')} <input type="color" id="cb" value="${P.black}"></label></div>
-    <div class="row lr"><label>${t('theme')} <input type="color" id="ct" value="${P.theme}"></label><label>${t('sec')} <input type="color" id="cs2" value="${P.sec}"></label></div>
+    <div class="row lr"><label>${t('dark')} <input type="color" id="cb" value="${P.black}"></label><label>${t('theme')} <input type="color" id="ct" value="${P.theme}"></label></div>
+    <div class="row lr"><label>${t('sec')} <input type="color" id="cs2" value="${P.sec}"></label><label>${t('light')} <input type="color" id="cw" value="${P.white}"></label></div>
     <h5>${t('usedBy')}</h5>
-    ${roles.map(([k, n]) => `<div class="el"><span>${n}</span><div class="chips">${c.map((x, i) => `<button data-r="${k}" data-i="${i}" class="${P.roles[k] === i ? 'on' : ''}" style="background:${x}" aria-label="${x}"></button>`).join('')}</div></div>`).join('')}
+    ${roles.map(([k, n]) => `<div class="el"><span>${n}</span><div class="chips">${[1, 2, 3, 0].map(i => { const x = c[i]; return `<button data-r="${k}" data-i="${i}" class="${P.roles[k] === i ? 'on' : ''}" style="background:${x}" aria-label="${x}"></button>` }).join('')}</div></div>`).join('')}
     <div class="row"><button class="b" id="psave">${t('save')}</button><button class="b" id="pcopy">Copy settings</button><button class="b" id="preset">${t('reset')}</button><span class="ok">${esc(keep)}</span></div>`;
 }
 document.addEventListener('click', e => {
@@ -615,7 +616,7 @@ function fit(){
   }
   const sn = $('since'), hr = $('hdr').getBoundingClientRect(), tr = t1.getBoundingClientRect(), sf = Math.max(sfm, SH * .78 * .75 * .85 * .85 * 1.25), pd = innerWidth * .025;
   if (!sn.firstChild) sn.innerHTML = ['SINCE', 'NOV', '10', 'MMXXVI', 'BY', 'ZUILOPEZ'].map(w => `<span>${w}</span>`).join('');
-  sn.style.fontSize = sf + 'px'; sn.style.left = pd + 'px'; sn.style.width = (hr.width - 2 * pd) + 'px'; sn.style.top = Math.max(0, tr.top - hr.top - sf - Math.max(10, sf * .9)) + 'px';
+  sn.style.fontSize = sf + 'px'; sn.style.left = (pd + (hr.width - 2 * pd) * .1) + 'px'; sn.style.width = ((hr.width - 2 * pd) * .8) + 'px'; sn.style.top = Math.max(0, tr.top - hr.top - sf - Math.max(10, sf * .9)) + 'px';
   { const R = document.documentElement.style, m = document.body.dataset.ph === 'match', a = m ? (window._sy || 0) : 0, b = m ? (window._ty || 0) : 0;
     const sr = sn.getBoundingClientRect(), tr2 = t1.getBoundingClientRect(), sT = sr.top - a, tT = tr2.top - b, fd = (() => { const q = $('pq'), h = document.querySelector('#hist .ht'); return Math.round((q ? q.offsetHeight + 10 : 24) + (h ? h.offsetHeight + 6 : 16) + 14) })(), hd = 0, gp = Math.max(0, (hr.height - sr.height - tr2.height) / 3);
     const ns = hr.top + gp, nt = ns + sr.height + gp; window._sy = Math.max(0, ns - sT); window._ty = Math.max(0, nt - tT); R.setProperty('--fd', fd + 'px'); R.setProperty('--hd', hd + 'px'); R.setProperty('--sy', window._sy + 'px'); R.setProperty('--ty', window._ty + 'px') }
@@ -685,8 +686,8 @@ class Col {
       d.style.setProperty('--ih', ih + 'px');
       d.style.height = g.ROW - 6 + 'px';
       d.className = 'r ' + (it.k === 'mode' ? 'root' : it.k === 'group' ? 'grp' : 'tm') + (hs ? ' hs' : '') + (i === this.hi ? ' sel' : '');
-      d.innerHTML = (hs ? `<span class="sy">${sym}</span>` : '') + `<span class="re">${lines ? esc(lines[0]) + '<br>' + esc(lines[1]) : esc(label)}${it.k === 'team' ? starHTML(it.t) : ''}</span>` +
-        (it.k === 'team' && !it.t.f ? `<i class="ig" style="font-family:'${fontOf(it.t)}',cursive">${esc(it.t.h || it.t.n)}</i>` : '') + (it.k === 'group' ? `<i class="cn">${it.n}</i>` : '');
+      d.innerHTML = (hs ? `<span class="sy">${sym}</span>` : '') + `<span class="re">${lines ? esc(lines[0]) + '<br>' + esc(lines[1]) : esc(label)}${it.k === 'team' ? starHTML(it.t) : `<i class="cn">${it.n}</i>`}</span>` +
+        (it.k === 'team' && !it.t.f ? `<i class="ig" style="font-family:'${fontOf(it.t)}',cursive">${esc(it.t.h || it.t.n)}</i>` : '');
       this.list_.appendChild(d);
       const re = d.querySelector('.re'), lim = g.W - 6;      // keep a clear gap between the two arcs for the arrow
       if (re && re.offsetWidth > lim) d.style.setProperty('--fs', Math.max(8, parseFloat(d.style.getPropertyValue('--fs')) * lim / re.offsetWidth) + 'px');
@@ -728,7 +729,7 @@ class Side {
     const a = this.ar = document.createElement('button'); a.className = 'arw'; a.innerHTML = '<svg viewBox="0 0 10 12"><path d="M0 0L10 6L0 12Z"/></svg>'; $('stage').appendChild(a);
     a.onclick = () => { if (this.depth > 0){ this.depth--; this.layoutCols() } };
   }
-  modeItems(){ return [{k:'mode', m:'c', label:t('clubs')}, {k:'mode', m:'n', label:t('nations')}] }
+  modeItems(){ return [{k:'mode', m:'c', label:t('clubs'), n:ALL.c.length}, {k:'mode', m:'n', label:t('nations'), n:ALL.n.length}] }
   groupItems(){ return MODES[this.mode].groups.map((g, i) => { const c = CONT[g.g] || ''; return {k:'group', gi:i, label:c ? CNAME[LANG][c] : g.g, sym:g.lgl || g.lg || '', cont:c, n:g.t.length} }) }
   teamItems(){ return MODES[this.mode].groups[this.gi].t.map(tm => ({k:'team', t:tm})) }
   rebuild(){
@@ -886,8 +887,8 @@ function renderMV(){
   for (const sd of ['L', 'R']){
     const S2 = SD[sd], d = S2.depth, home = sd === 'L';
     const yIn = home ? top - 6 - inner / 2 : bot + 6 + inner / 2, yOut = home ? yIn - (inner + outer) / 2 - 2 : yIn + (inner + outer) / 2 + 2;
-    const row = (k, y, h, fs, cls) => `<div class="mrow ${cls}" data-sd="${sd}" data-k="${k}" style="top:${y - h / 2}px;height:${h}px">${S2.cols[k].items.map((it, i) => { const lb = mvLabel(it), ln = split2(lb), ig = it.k === 'team' && !it.t.f ? `<i class="ig" style="font-family:'${fontOf(it.t)}',cursive">${esc(it.t.h || it.t.n)}</i>` : (it.k === 'group' ? `<i class="cn">${it.n}</i>` : '');
-      return `<span class="mi ${mvOn(sd, k, it) ? 'on' : ''} ${cls === 'out' && mvOn(sd, k, it) ? 'up' : ''}" data-i="${i}" style="font-size:${fitF(ln, fs).toFixed(1)}px"><span class="re">${ln.map(esc).join('<br>')}${it.k === 'team' ? starHTML(it.t) : ''}</span>${ig}</span>` }).join('')}</div>`;
+    const row = (k, y, h, fs, cls) => `<div class="mrow ${cls}" data-sd="${sd}" data-k="${k}" style="top:${y - h / 2}px;height:${h}px">${S2.cols[k].items.map((it, i) => { const lb = mvLabel(it), ln = split2(lb), ig = it.k === 'team' && !it.t.f ? `<i class="ig" style="font-family:'${fontOf(it.t)}',cursive">${esc(it.t.h || it.t.n)}</i>` : '';
+      return `<span class="mi ${mvOn(sd, k, it) ? 'on' : ''} ${cls === 'out' && mvOn(sd, k, it) ? 'up' : ''}" data-i="${i}" style="font-size:${fitF(ln, fs).toFixed(1)}px"><span class="re">${ln.map(esc).join('<br>')}${it.k === 'team' ? starHTML(it.t) : `<i class="cn">${it.n}</i>`}</span>${ig}</span>` }).join('')}</div>`;
     if (d >= 1) html += row(d - 1, yOut, outer, 14, 'out');
     html += row(d, yIn, inner, 25, 'in');
   }
@@ -1093,8 +1094,9 @@ function lens(){      // rows scale + fade by distance from the top of the windo
   const hs = $('hs'); if (!hs) return; const rs = hs.querySelectorAll('.hr'); if (!rs.length) return; const rh = rs[0].offsetHeight || 1;
   rs.forEach(el => { const k = Math.max(.5, Math.pow(.8, Math.abs(el.offsetTop - hs.scrollTop) / rh)); el.style.transform = `scale(${k.toFixed(3)})`; el.style.opacity = Math.max(.08, Math.pow(.5, Math.max(0, (el.offsetTop - hs.scrollTop) / rh))).toFixed(3) });
 }
-$('hist').addEventListener('click', e => { if (e.target.closest('.ht')){ const o = document.body.classList.toggle('hopen'); if (o){ document.body.classList.add('hfx'); clearTimeout(window._hfx); window._hfx = setTimeout(() => document.body.classList.remove('hfx'), 600) } } });
-function pqHtml(){ const c = cols(); return `<div id="pq">${PKEYS.map(k => `<button data-pq="${k}" class="${curPre() === k ? 'on' : ''}" style="background:${c[PRESETS[k].bg]}" aria-label="${k}"></button>`).join('')}</div>` }
+document.body.classList.add('hopen');
+$('hist').addEventListener('click', e => { if (false && e.target.closest('.ht')){ const o = document.body.classList.toggle('hopen'); if (o){ document.body.classList.add('hfx'); clearTimeout(window._hfx); window._hfx = setTimeout(() => document.body.classList.remove('hfx'), 600) } } });
+function pqHtml(){ const c = cols(); return `<div id="pq">${['dark', 'green', 'pink', 'light'].map(k => `<button data-pq="${k}" class="${curPre() === k ? 'on' : ''}" style="background:${c[PRESETS[k].bg]}" aria-label="${k}"></button>`).join('')}</div>` }
 $('hist').addEventListener('click', e => { const b = e.target.closest('[data-pq]'); if (b) usePre(b.dataset.pq) });
 const nm2 = l => { if (!(S.nl === 2 && l.length > 12 && l.includes(' '))) return esc(l); const w = l.split(' '); let best = 1, bd = 1e9; for (let c = 1; c < w.length; c++){ const d = Math.abs(w.slice(0, c).join(' ').length - w.slice(c).join(' ').length); if (d < bd){ bd = d; best = c } } return esc(w.slice(0, best).join(' ')) + '<br>' + esc(w.slice(best).join(' ')) };
 const persist = () => store.set('ef5_hist', S.hist.filter(h => h.sv));
@@ -1182,7 +1184,7 @@ for (const [id, key] of [['zfa', 'a'], ['zfc', 'c'], ['zfv', 'v'], ['zfo', 'o']]
 $('ecr').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.ec = b.dataset.v; store.set('ef10_ec', S.ec); pillSet('ecr', S.ec); echoDraw() };
 $('esp').oninput = e => { S.es = S.esEff = +e.target.value; store.set('ef14_es', S.es); $('espv').textContent = S.es + ' px'; if (ECHO.args) buildEcho(...ECHO.args) };
 $('pace').oninput = e => { S.pace = +e.target.value; store.set('ef11_pace', S.pace); $('pcv').textContent = S.pace + ' s' };
-$('hm').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.hmax = +b.dataset.v; store.set('ef7_hmax', S.hmax); pillSet('hm', S.hmax); renderHist() };
+$('hm').onclick = e => { const b = e.target.closest('.pill'); if (!b) return; S.hmax = 3; pillSet('hm', S.hmax); renderHist() };
 $('mins').oninput = e => { const v = Math.max(1, Math.min(120, Math.round(+e.target.value) || 10)); S.mins = v; store.set('ef9_mins', v) };
 $('hl').addEventListener('click', e => { const b = e.target.closest('.hx'); if (!b) return; S.hist.splice(+b.dataset.k, 1); persist(); renderHist() });
 function editScore(el){
