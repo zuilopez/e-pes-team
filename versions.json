@@ -142,5 +142,11 @@
   "label": "v.1.3s",
   "date": "13/11/2026",
   "note": "Bỏ FX 3; sửa lỗi trang tự trượt xuống (transition hàng grid chỉ còn áp dụng khi vào/ra trận ở layout dọc); ẩn vòng ripple vàng khi chưa chạy đồng hồ"
+ },
+ {
+  "id": "v1.3t",
+  "label": "v.1.3t",
+  "date": "13/11/2026",
+  "note": "Sửa: bỏ đổi chiều cao header ở layout dọc (tiêu đề không tụt khỏi since, dịch sân bằng offset stage+footer); ripple liền nét như cũ; zoom blur lúc vào trận chỉnh được trong VAR (mức + thời gian), bớt tối ở mức cao"
  }
 ]
