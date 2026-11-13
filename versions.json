@@ -52,5 +52,11 @@
   "label": "v.1.3d",
   "date": "13/11/2026",
   "note": "Random tối đa 3 cặp liền kề cùng kiểu (CLB–CLB / QG–QG / QG–CLB), bỏ Bayern, chỉ giữ đội ≥ 4 sao (overall TB 11 đá chính, efootballdb), hiện overall + sao trên tên"
+ },
+ {
+  "id": "v1.3e",
+  "label": "v.1.3e",
+  "date": "13/11/2026",
+  "note": "Ngưỡng lọc ≥ 3.5 sao (thêm lại các đội 3.5–4 sao), bỏ số overall chỉ hiện sao, sửa logo QG chồng lên sao/tên"
  }
 ]
