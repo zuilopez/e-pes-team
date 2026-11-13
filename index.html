@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3f</title>
+<title>e-pes-team v.1.3g</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -414,7 +414,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3f</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3g</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -426,7 +426,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3.5;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3f';
+const CUR = 'v1.3g';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -438,7 +438,8 @@ const VERSIONS = [
  {id:'v1.3c',label:'v.1.3c',date:'11/11/2026',note:'Bảng màu mặc định: nền đen (chữ tên trắng)'},
  {id:'v1.3d',label:'v.1.3d',date:'13/11/2026',note:'Random tối đa 3 cặp liền kề cùng kiểu (CLB–CLB / QG–QG / QG–CLB), bỏ Bayern, chỉ giữ đội ≥ 4 sao (overall TB 11 đá chính, efootballdb), hiện overall + sao trên tên'},
  {id:'v1.3e',label:'v.1.3e',date:'13/11/2026',note:'Ngưỡng lọc ≥ 3.5 sao (thêm lại các đội 3.5–4 sao), bỏ số overall chỉ hiện sao, sửa logo QG chồng lên sao/tên'},
- {id:'v1.3f',label:'v.1.3f',date:'13/11/2026',note:'Ký hiệu CLB/QG theo màu theme; layout trắng đổi chỗ màu chính và phụ'}
+ {id:'v1.3f',label:'v.1.3f',date:'13/11/2026',note:'Ký hiệu CLB/QG theo màu theme; layout trắng đổi chỗ màu chính và phụ'},
+ {id:'v1.3g',label:'v.1.3g',date:'13/11/2026',note:'QG hiện quốc kỳ (bỏ logo liên đoàn), bỏ logo trên sao; giao diện xanh: since trắng; giao diện hồng: slogan xanh'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
@@ -452,7 +453,7 @@ const store = {
 /* ---------- palette: white + black fixed, theme + secondary editable ---------- */
 const FACT = {white:'#ffffff', black:'#0a0a0a', theme:'#d6f04a', sec:'#ff5fae', roles:{bg:1, name:0, sub:2}};   // index: 0 white, 1 black, 2 theme, 3 sec
 const PKEYS = ['light', 'dark', 'green', 'pink'];            // named after the background colour
-const PRESETS = {light:{bg:0, name:1, sub:2}, dark:{bg:1, name:0, sub:2}, green:{bg:2, name:1, sub:3}, pink:{bg:3, name:1, sub:0}};
+const PRESETS = {light:{bg:0, name:1, sub:2}, dark:{bg:1, name:0, sub:2}, green:{bg:2, name:1, sub:3}, pink:{bg:3, name:1, sub:2}};
 const curPre = () => PKEYS[P.roles.bg];
 function usePre(k){ Object.assign(P.roles, PRESETS[k]); applyPal() }
 function eff(){      // accent colours must never equal the background
@@ -495,7 +496,7 @@ const cols = () => [WH(), P.black, P.theme, P.sec];
 function setVars(){
   const c = cols(), r = document.documentElement.style, bg = c[P.roles.bg], e = eff();
   r.setProperty('--bg', bg); r.setProperty('--ink', lum(bg) > .55 ? P.black : WH());
-  r.setProperty('--theme', e.th); r.setProperty('--sec', e.sc); r.setProperty('--sinC', P.roles.bg >= 2 ? P.black : e.sc);
+  r.setProperty('--theme', e.th); r.setProperty('--sec', e.sc); r.setProperty('--sinC', P.roles.bg === 2 ? WH() : P.roles.bg === 3 ? P.black : e.sc);
   r.setProperty('--nameC', c[P.roles.name]); r.setProperty('--subC', c[P.roles.bg === 0 && P.roles.sub >= 2 ? 5 - P.roles.sub : P.roles.sub]);
   r.setProperty('--onTheme', lum(e.th) > .55 ? '#0a0a0a' : '#ffffff'); r.setProperty('--onSec', lum(e.sc) > .55 ? '#0a0a0a' : '#ffffff');
   document.body.dataset.dm = lum(bg) > .55 ? 'light' : 'dark';
@@ -673,7 +674,7 @@ class Col {
       let sym = '';
       if (it.k === 'mode') sym = ICONS[it.m];
       else if (it.k === 'group') sym = it.cont ? globe(it.cont) : (it.sym ? `<img src="${it.sym}" alt="">` : '');
-      else if (it.t.f) sym = `<img src="${it.t.fed || it.t.l}" alt="">`;
+      else sym = '';      // team rows: no crest/flag above the stars
       const hs = !!sym;
       const lines = (S.nl === 2 && label.length > 12 && label.includes(' ')) ? (() => { const w = label.split(' '); let best = 1, bd = 1e9; for (let c = 1; c < w.length; c++){ const d = Math.abs(w.slice(0, c).join(' ').length - w.slice(c).join(' ').length); if (d < bd){ bd = d; best = c } } return [w.slice(0, best).join(' '), w.slice(best).join(' ')] })() : null;
       const L4 = Math.max(label.length, 4), gain = Math.min(1.12, (L4 * .64 + .6) / (L4 * .64 + .2));
@@ -844,7 +845,7 @@ function drawSheet(){
     rows = MODES[SHT.m].groups.map((g, i) => { const c = CONT[g.g] || '', sym = c ? globe(c) : ((g.lgl || g.lg) ? `<img src="${g.lgl || g.lg}" alt="">` : ''); return `<div class="shr" data-a="g" data-v="${i}"><span class="sy">${sym}</span><b>${esc(c ? CNAME[LANG][c] : g.g)}</b></div>` }).join('');
   } else {
     const g = MODES[SHT.m].groups[SHT.gi]; title = hd + ' · ' + (CONT[g.g] ? CNAME[LANG][CONT[g.g]] : g.g);
-    rows = g.t.map((tm, i) => `<div class="shr${cur === tm ? ' on' : ''}" data-a="t" data-v="${i}"><span class="sy"><img src="${tm.f ? (tm.fed || tm.l) : tm.l}" alt=""></span><b>${esc(tm.n)}</b></div>`).join('');
+    rows = g.t.map((tm, i) => `<div class="shr${cur === tm ? ' on' : ''}" data-a="t" data-v="${i}"><span class="sy"><img src="${tm.l}" alt=""></span><b>${esc(tm.n)}</b></div>`).join('');
   }
   $('shTitle').textContent = title; $('shList').innerHTML = rows; $('shList').scrollTop = 0;
 }
@@ -929,7 +930,7 @@ function randomBoth(){
 }
 
 /* ---------- pitch ---------- */
-const fakeLogo = tm => tm.f ? (tm.fed || tm.l) : (tm.h ? tm.l : (tm.r || tm.l));   // clubs without a fake crest use the real one
+const fakeLogo = tm => tm.f ? tm.l : (tm.h ? tm.l : (tm.r || tm.l));   // clubs without a fake crest use the real one
 function sideHtml(tm, key){
   if (!tm) return '';
   const inp = S.phase === 'match' ? `<div class="score"><input inputmode="numeric" maxlength="2" placeholder=" " data-k="${key}" value="${esc(S[key])}" aria-label="score"><i class="dot"></i></div>` : '';

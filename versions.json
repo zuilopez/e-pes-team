@@ -64,5 +64,11 @@
   "label": "v.1.3f",
   "date": "13/11/2026",
   "note": "Ký hiệu CLB/QG theo màu theme; layout trắng đổi chỗ màu chính và phụ"
+ },
+ {
+  "id": "v1.3g",
+  "label": "v.1.3g",
+  "date": "13/11/2026",
+  "note": "QG hiện quốc kỳ (bỏ logo liên đoàn), bỏ logo trên sao; giao diện xanh: since trắng; giao diện hồng: slogan xanh"
  }
 ]
