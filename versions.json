@@ -46,5 +46,11 @@
   "label": "v.1.3c",
   "date": "11/11/2026",
   "note": "Bảng màu mặc định: nền đen (chữ tên trắng)"
+ },
+ {
+  "id": "v1.3d",
+  "label": "v.1.3d",
+  "date": "13/11/2026",
+  "note": "Random tối đa 3 cặp liền kề cùng kiểu (CLB–CLB / QG–QG / QG–CLB), bỏ Bayern, chỉ giữ đội ≥ 4 sao (overall TB 11 đá chính, efootballdb), hiện overall + sao trên tên"
  }
 ]
