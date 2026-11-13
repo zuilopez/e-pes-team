@@ -94,5 +94,11 @@
   "label": "v.1.3k",
   "date": "13/11/2026",
   "note": "Sửa triệt để vạch mờ ở footer khi vào trận: vòng echo bị cắt đúng theo đáy sân (trước đây vùng cắt mở thêm 82px xuống footer)"
+ },
+ {
+  "id": "v1.3l",
+  "label": "v.1.3l",
+  "date": "13/11/2026",
+  "note": "Footer không còn nền sáng hơn đáy sân khi vào trận: lớp vignette không phủ xuống footer nữa (trước đây tạo đường biên mờ ngang)"
  }
 ]

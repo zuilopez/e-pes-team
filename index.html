@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>e-pes-team v.1.3k</title>
+<title>e-pes-team v.1.3l</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -312,6 +312,7 @@ body.hfx #hist .h .s,body.hfx #hist .h small{animation:fadeI .12s calc((var(--n,
 .bgl{z-index:4}
 #vig{position:fixed;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .6s;background:radial-gradient(ellipse 70% 80% at 50% calc(var(--cy) + var(--hh,100px)),transparent 45%,color-mix(in srgb,var(--ink) 13%,transparent) 100%)}
 body[data-ph=match] #vig{opacity:1}
+#vig{clip-path:inset(0 0 82px 0)}
 #pp .lr{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;justify-items:stretch}
 #pp .lr label{display:flex;justify-content:space-between;align-items:center;gap:4px;font-size:.86em;min-width:0}
 @media(max-width:600px){.vp[data-s=e],.vp[data-s=p],.vp[data-s=h]{display:none!important}.fcols>div:nth-child(2){display:none}.fcols>div:first-child>:not(.hk){display:none!important}}
@@ -416,7 +417,7 @@ body[data-ph=match] #fsl i{opacity:1;transition:opacity 2s ease var(--d,5s)}
 </main>
 <div id="sheet"><div class="sbg"></div><div class="sbox"><div class="stop"><button id="shBack">‹</button><b id="shTitle"></b><button id="shX">✕</button></div><div id="shList"></div></div></div>
 <footer><div id="fsl"></div>
-  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3k</span></button><div class="vlist" id="vlist"></div></div></div>
+  <div class="fl2 L"><div class="ver" id="verW"><button class="vbtn" id="vbtn"><span class="vv">v.</span><span class="vn">1.3l</span></button><div class="vlist" id="vlist"></div></div></div>
   <button id="menu"><span>VAR</span><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M62 52C36 55 8 44 7 28C6 11 38 3 68 4C100 5 117 16 113 33C110 49 90 57 66 57C54 57 44 52 40 42"/></svg></button>
   <div class="fl2 R"><div class="lang" id="lg"><button id="lgb"></button></div></div>
 </footer>
@@ -428,7 +429,7 @@ const starsOf = o => { for (const [v, n] of STAR_AT) if (o >= v) return n; retur
 const MIN_STARS = 3;
 for (const m of ['c', 'n']){ D[m].forEach(g => { g.t = g.t.filter(t => t.o != null && starsOf(t.o) >= MIN_STARS) }); D[m] = D[m].filter(g => g.t.length) }
 const starHTML = t => { if (t.o == null) return ''; const n = starsOf(t.o), f = Math.floor(n); return `<b class="st"><s>${'★'.repeat(f)}${n > f ? '½' : ''}</s></b>` };
-const CUR = 'v1.3k';
+const CUR = 'v1.3l';
 const VERSIONS = [
  {id:'v01',label:'v.01',date:'09/11/2026',note:'Bản đầu: nền trắng/hồng, 2 ô đội, chọn trong 1 màn, bóng → tỉ số'},
  {id:'v02',label:'v.02',date:'09/11/2026',note:'Nền chanh / đen, bánh xe chọn đội, sân bóng ở giữa, menu custom'},
@@ -445,7 +446,8 @@ const VERSIONS = [
  {id:'v1.3h',label:'v.1.3h',date:'13/11/2026',note:'Ngưỡng ≥ 3 sao; thêm 22 CLB (Süper Lig, Eredivisie, Bồ Đào Nha, Brasil, Argentina, AFC...) và 12 QG; hiện số đội dưới tên giải/khu vực; icon giải CLB x2'},
  {id:'v1.3i',label:'v.1.3i',date:'13/11/2026',note:'Số đội thu nhỏ ở góc trên phải tên (thêm cho Club/Nation), icon Club/Nation x2, trắng xuống cuối bảng màu, since 4/5, PM luôn hiện 3 trận, làm mờ khi vào trận x2'},
  {id:'v1.3j',label:'v.1.3j',date:'13/11/2026',note:'Số đội căn giữa dưới tên giải (nhỏ 2/3); xoay cung chọn đội tự hiện logo ở 2 vị trí (click chỉ để chọn); zoom blur logo chạy 35 → 100 khi vào trận và ngược lại'},
- {id:'v1.3k',label:'v.1.3k',date:'13/11/2026',note:'Sửa triệt để vạch mờ ở footer khi vào trận: vòng echo bị cắt đúng theo đáy sân (trước đây vùng cắt mở thêm 82px xuống footer)'}
+ {id:'v1.3k',label:'v.1.3k',date:'13/11/2026',note:'Sửa triệt để vạch mờ ở footer khi vào trận: vòng echo bị cắt đúng theo đáy sân (trước đây vùng cắt mở thêm 82px xuống footer)'},
+ {id:'v1.3l',label:'v.1.3l',date:'13/11/2026',note:'Footer không còn nền sáng hơn đáy sân khi vào trận: lớp vignette không phủ xuống footer nữa (trước đây tạo đường biên mờ ngang)'}
 ];
 const FONTS = ['Square Peg','Mr De Haviland','Nothing You Could Do','Waiting for the Sunrise','Homemade Apple','Rock Salt','Seaweed Script','Yuji Boku'];
 const $ = id => document.getElementById(id);
